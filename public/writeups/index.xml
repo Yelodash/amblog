@@ -11,6 +11,36 @@
     
     <item>
       <title>Writeups</title>
+      <link>//localhost:56961/writeups/blue-team/index.md/</link>
+      <pubDate>Fri, 18 Jul 2025 14:00:00 +0000</pubDate>
+      
+      <guid>//localhost:56961/writeups/blue-team/index.md/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Writeups</title>
+      <link>//localhost:56961/writeups/cloud/index.md/</link>
+      <pubDate>Fri, 18 Jul 2025 14:00:00 +0000</pubDate>
+      
+      <guid>//localhost:56961/writeups/cloud/index.md/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Writeups</title>
+      <link>//localhost:56961/writeups/forensics/index.md/</link>
+      <pubDate>Fri, 18 Jul 2025 14:00:00 +0000</pubDate>
+      
+      <guid>//localhost:56961/writeups/forensics/index.md/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Writeups</title>
       <link>//localhost:56961/writeups/red-team/index.md/</link>
       <pubDate>Fri, 18 Jul 2025 14:00:00 +0000</pubDate>
       

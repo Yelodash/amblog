@@ -39,6 +39,24 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>//localhost:56961/writeups/blue-team/index.md/</loc>
+    <lastmod>2025-07-18T14:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>//localhost:56961/writeups/cloud/index.md/</loc>
+    <lastmod>2025-07-18T14:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>//localhost:56961/writeups/forensics/index.md/</loc>
+    <lastmod>2025-07-18T14:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>//localhost:56961/writeups/red-team/index.md/</loc>
     <lastmod>2025-07-18T14:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>

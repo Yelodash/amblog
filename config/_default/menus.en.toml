@@ -20,39 +20,8 @@ weight = 10
 [[main]]
 identifier = "Writeups"
 name = "Writeups"
-pageRef = "posts/writeups"    # <- points to landing page
+pageRef = "Writeups"    # <- points to landing page
 weight = 20
-
-# Subcategories under Writeups
-[[main]]
-name = "Blue Team"
-parent = "Writeups"
-pageRef = "posts/blue"
-weight = 21
-
-[[main]]
-name = "Red Team"
-parent = "Writeups"
-pageRef = "posts/red"
-weight = 22
-
-[[main]]
-name = "Forensics"
-parent = "Writeups"
-pageRef = "posts/forensics"
-weight = 23
-
-[[main]]
-name = "Cloud"
-parent = "Writeups"
-pageRef = "posts/Cloud"
-weight = 23
-
-# Projects
-[[main]]
-name = "Projects"
-pageRef = "projects"
-weight = 31
 
 # GitHub (internal or external — change as needed)
 [[main]]
