@@ -5,8 +5,8 @@ description:
 draft: false
 weight: 1
 tags:
-  - "#SQL"
-  - "#API"
+  - SQL
+  - API
   - Nagios
   - Linux
 categories: Red Team
