@@ -2,29 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Blowfish</title>
-    <link>/</link>
+    <link>//localhost:56961/</link>
     <description>Recent content on Blowfish</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2025 </copyright>
-    <lastBuildDate>Fri, 18 Jul 2025 14:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 18 Jul 2025 14:00:00 +0000</lastBuildDate><atom:link href="//localhost:56961/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>File Name</title>
-      <link>/about/index.md/</link>
+      <link>//localhost:56961/about/index.md/</link>
       <pubDate>Fri, 18 Jul 2025 14:00:00 +0000</pubDate>
       
-      <guid>/about/index.md/</guid>
+      <guid>//localhost:56961/about/index.md/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>File Name</title>
-      <link>/blog/first-post/index.md/</link>
+      <link>//localhost:56961/blog/first-post/index.md/</link>
       <pubDate>Fri, 18 Jul 2025 14:00:00 +0000</pubDate>
       
-      <guid>/blog/first-post/index.md/</guid>
+      <guid>//localhost:56961/blog/first-post/index.md/</guid>
       <description></description>
       
     </item>
