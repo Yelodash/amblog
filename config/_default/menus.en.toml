@@ -50,22 +50,22 @@ weight = 10
 [[main]]
 identifier = "defense"
 name = "Defense"
-pageRef = "writeups/blue-team-labs/defense"
-parent = "blue-team-labs"
+pageRef = "writeups/blue-team/defense"
+parent = "blue-team"
 weight = 11
 
 [[main]]
 identifier = "forensics"
 name = "Forensics"
-pageRef = "writeups/blue-team-labs/forensics"
-parent = "blue-team-labs"
+pageRef = "writeups/blue-team/forensics"
+parent = "blue-team"
 weight = 12
 
 # Red Team CTFs - Parent menu item
 [[main]]
-identifier = "red-team-ctfs"
-name = "Red Team CTFs"
-pageRef = "writeups/red-team-ctfs"
+identifier = "red-team"
+name = "Red Team"
+pageRef = "writeups/red-team"
 parent = "writeups"
 weight = 20
 
