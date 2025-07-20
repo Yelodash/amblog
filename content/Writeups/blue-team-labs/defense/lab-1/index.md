@@ -8,7 +8,7 @@ weight: 1
 tags:
   - SMB
   - Windows
-categories: Red Team
+categories: '"Red Team"'
 TocOpen: true
 showReadingTime: true
 showTableOfContents: true
