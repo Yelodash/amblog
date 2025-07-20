@@ -34,22 +34,14 @@ parent = "writeups"
 pageRef = "posts/red"
 weight = 22
 
-# Top-level Resources menu (Parent of Projects and GitHub)
-[[main]]
-identifier = "resources"
-name = "Resources"
-weight = 30
-
 [[main]]
 name = "Projects"
-parent = "resources"
 pageRef = "projects"
 weight = 31
 
 [[main]]
 name = "GitHub"
-parent = "resources"
-url = "https://github.com/yourusername"
+pageRef= "github"
 weight = 32
 
 
