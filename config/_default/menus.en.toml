@@ -50,22 +50,22 @@ weight = 10
 [[main]]
 identifier = "defense"
 name = "Defense"
-pageRef = "writeups/blue-team/defense"
-parent = "blue-team"
+pageRef = "writeups/blue-team-labs/defense"
+parent = "blue-team-labs"
 weight = 11
 
 [[main]]
 identifier = "forensics"
 name = "Forensics"
-pageRef = "writeups/blue-team/forensics"
-parent = "blue-team"
+pageRef = "writeups/blue-team-labs/forensics"
+parent = "blue-team-labs"
 weight = 12
 
 # Red Team CTFs - Parent menu item
 [[main]]
-identifier = "red-team"
-name = "Red Team"
-pageRef = "writeups/red-team"
+identifier = "red-team-ctfs"
+name = "Red Team CTFs"
+pageRef = "writeups/red-team-ctfs"
 parent = "writeups"
 weight = 20
 
@@ -108,14 +108,14 @@ weight = 24
 # External links
 [[main]]
 identifier = "github"
-name = "GitHub"
+name = ""
 pre = "github" # icon 
 url = "https://github.com/Yelodash"
 weight = 200
 
 [[main]]
 identifier = "linkedin"
-name = "LinkedIn"
+name = ""
 pre = "linkedin" # icon 
 url = "https://www.linkedin.com/in/moustapha-antoine-mindaoudou-6123311a3/"
 weight = 205
