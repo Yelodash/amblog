@@ -13,10 +13,10 @@ showWordCount: false
 showReadingTime: false
 showTableOfContents: true
 featuredImage: images/test
-featuredImageAlt:
+cover:
 ---
 
-
+cover: image: "images/htb-logo.png"
 
 ---
 
