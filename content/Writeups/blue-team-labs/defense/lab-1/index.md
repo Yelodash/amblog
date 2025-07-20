@@ -5,7 +5,7 @@ date: 2025-07-18T14:00:00Z
 draft: false
 weight: 1
 tags: 
-categories: '["Red Team", "HTB"]'
+categories: Red Team
 author: 
 TocOpen: true
 showReadingTime: true
