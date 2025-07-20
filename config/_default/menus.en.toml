@@ -51,6 +51,7 @@ weight = 31
 # GitHub (internal or external — change as needed)
 [[main]]
 name = "GitHub"
+pre = "github" #icon 
 url = "https://github.com/yourusername"
 weight = 32
 
