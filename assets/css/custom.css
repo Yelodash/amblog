@@ -1,0 +1,92 @@
+/* Custom CSS for better centering and spacing */
+
+/* Center main content containers */
+.prose {
+    max-width: 75ch !important;
+    margin: 0 auto !important;
+}
+
+/* Center article lists and cards */
+.article-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Better card spacing and centering */
+.article-card {
+    margin: 0 auto;
+    max-width: 400px;
+    width: 100%;
+}
+
+/* Center section headings */
+.section-heading {
+    text-align: center;
+    margin: 3rem auto 2rem auto;
+}
+
+/* Center writeups grid */
+.writeups-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Center cards in grid layout */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    justify-content: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+/* Center homepage content */
+.homepage-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 2rem;
+}
+
+/* Center recent posts section */
+.recent-posts {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Better spacing for sections */
+.content-section {
+    margin: 3rem auto;
+    padding: 0 2rem;
+}
+
+/* Center navigation breadcrumbs */
+.breadcrumbs {
+    justify-content: center;
+    margin: 1rem auto;
+}
+
+/* Responsive centering */
+@media (max-width: 768px) {
+    .cards-grid {
+        grid-template-columns: 1fr;
+        max-width: 90%;
+    }
+    
+    .article-list {
+        padding: 1rem;
+    }
+    
+    .content-section {
+        padding: 0 1rem;
+    }
+}
