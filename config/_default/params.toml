@@ -83,20 +83,3 @@ smartTOCHideUnfocusedChildren = true
 # Keep the rest as-is...
 
 # Add this to your params.toml file
-
-[author]
-  name = "A.M"
-  image = "images/test.webp"
-  headline = "Purple Teamer"
-  
-  [[author.links]]
-    name = "LinkedIn"
-    url = "https://www.linkedin.com/in/moustapha-antoine-mindaoudou-6123311a3/"
-    icon = "linkedin"
-  
-  [[author.links]]
-    name = "GitHub" 
-    url = "https://github.com/Yelodash"
-    icon = "github"
-  
-
