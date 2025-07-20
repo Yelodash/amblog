@@ -6,7 +6,7 @@
     <description>Recent content in Easy on BlackLotus</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <copyright>&amp;copy; 2025 Antoine Mindaoudou. All Rights Reserved</copyright>
+    <copyright>© 2025 Antoine Mindaoudou</copyright>
     <lastBuildDate>Fri, 18 Jul 2025 14:00:00 +0000</lastBuildDate><atom:link href="https://your-domain.com/difficulties/easy/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -17,6 +17,16 @@
       <guid>https://your-domain.com/writeups/blue-team-labs/defense/lab-1/</guid>
       <description></description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://your-domain.com/writeups/blue-team-labs/defense/lab-1/featured.png.png" />
+    </item>
+    
+    <item>
+      <title>Monitored</title>
+      <link>https://your-domain.com/writeups/red-team-ctfs/hack-the-box/monitored/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://your-domain.com/writeups/red-team-ctfs/hack-the-box/monitored/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://your-domain.com/writeups/red-team-ctfs/hack-the-box/monitored/featured.png.png" />
     </item>
     
   </channel>
