@@ -29,6 +29,13 @@ pageRef = "posts/blue"
 weight = 21
 
 [[main]]
+name = "Forensics"
+parent = "writeups"
+pageRef = "posts/forensics"
+weight = 23
+
+
+[[main]]
 name = "Red Team"
 parent = "writeups"
 pageRef = "posts/red"
