@@ -16,8 +16,6 @@ difficulties: easy
 platforms: Hack The Box
 ---
 
-cover: image: "images/htb-logo.png"
-
 ---
 
 ## Machine Overview

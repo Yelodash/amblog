@@ -46,13 +46,13 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://your-domain.com/writeups/red-team-ctfs/</loc>
+    <loc>https://your-domain.com/writeups/</loc>
+    <lastmod>2025-07-18T14:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://your-domain.com/writeups/</loc>
-    <lastmod>2025-07-18T14:00:00+00:00</lastmod>
+    <loc>https://your-domain.com/writeups/red-team-ctfs/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
