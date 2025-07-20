@@ -7,7 +7,7 @@ weight: 1
 tags: 
 author: 
 showToc: true
-TocOpen: false
+TocOpen: true
 comments: false
 showSummary: false
 showWordCount: false
