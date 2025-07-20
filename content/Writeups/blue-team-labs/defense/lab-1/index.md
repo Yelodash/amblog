@@ -4,7 +4,8 @@ description:
 date: 2025-07-18T14:00:00Z
 draft: false
 weight: 1
-tags: 
+tags:
+  - SMB
 categories: Red Team
 author: 
 TocOpen: true
