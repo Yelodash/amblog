@@ -12,7 +12,7 @@ showSummary: false
 showWordCount: false
 showReadingTime: false
 showTableOfContents: true
-featuredImage: images/test
+featuredImage: "![Legacy Machine Info](images/test.png)"
 cover:
 ---
 
