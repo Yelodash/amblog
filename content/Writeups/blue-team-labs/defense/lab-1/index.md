@@ -1,17 +1,21 @@
 ---
 title: HTB easy
+author: BlackLotus
 description: 
 date: 2025-07-18T14:00:00Z
 draft: false
 weight: 1
 tags:
   - SMB
+  - Windows
 categories: Red Team
-author: 
 TocOpen: true
 showReadingTime: true
 showTableOfContents: true
 featuredImage: images/test.png
+series: HTB Windows Machines
+difficulties: easy
+platforms: Hack The Box
 ---
 
 cover: image: "images/htb-logo.png"
