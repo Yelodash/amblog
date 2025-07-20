@@ -5,15 +5,12 @@ date: 2025-07-18T14:00:00Z
 draft: false
 weight: 1
 tags: 
+categories: '["Red Team", "HTB"]'
 author: 
 TocOpen: true
-comments: false
-showSummary: false
-showWordCount: false
-showReadingTime: false
+showReadingTime: true
 showTableOfContents: true
-featuredImage: "![Legacy Machine Info](images/test.png)"
-cover:
+featuredImage: images/test.png
 ---
 
 cover: image: "images/htb-logo.png"

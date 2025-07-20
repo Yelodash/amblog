@@ -7,7 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>&amp;copy; 2025 A.M. All Rights Reserved</copyright>
-    <atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 18 Jul 2025 14:00:00 +0000</lastBuildDate><atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>[&#34;Red Team&#34;, &#34;HTB&#34;]</title>
+      <link>/categories/red-team-htb/</link>
+      <pubDate>Fri, 18 Jul 2025 14:00:00 +0000</pubDate>
+      
+      <guid>/categories/red-team-htb/</guid>
+      <description></description>
+      
+    </item>
     
   </channel>
 </rss>
