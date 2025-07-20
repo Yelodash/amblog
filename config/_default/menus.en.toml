@@ -13,7 +13,7 @@
 # Home
 [[main]]
 name = "Home"
-pageRef = "home"
+pageRef = "/"
 weight = 10
 
 # Top-level Writeups menu (now a real landing page)
