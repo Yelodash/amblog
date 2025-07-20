@@ -2,7 +2,7 @@
 title: vulnlab
 description: 
 layout: list
-weight: 25
+weight: 0
 ShowDate: false
 showWordCount: false
 showReadingTime: false
