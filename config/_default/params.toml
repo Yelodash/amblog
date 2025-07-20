@@ -49,7 +49,7 @@ smartTOCHideUnfocusedChildren = true
   cardView = true  # Enable card view for better presentation
 
 [article]
-  showDate = true
+  showDate = false
   showViews = false
   showLikes = false
   showDateOnlyInArticle = false
@@ -68,7 +68,7 @@ smartTOCHideUnfocusedChildren = true
   showTableOfContents = true
   showTaxonomies = true  # Show tags and categories
   showAuthorsBadges = false
-  showWordCount = true
+  showWordCount = false
   # Enable sharing for your writeups
   #sharingLinks = ["linkedin","github"]
   showZenMode = true  # Add focus mode for reading
