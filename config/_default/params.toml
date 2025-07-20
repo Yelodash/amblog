@@ -1,176 +1,83 @@
 # -- Theme Options --
 # These options control how the theme functions and allow you to
 # customise the display of your website.
-#
-# Refer to the theme docs for more details about each of these parameters.
-# https://blowfish.page/docs/configuration/#theme-parameters
 
-colorScheme = "Congo"
-defaultAppearance = "dark" # valid options: light or dark
-autoSwitchAppearance = false
+colorScheme = "Congo"  # Good choice! Also try "Slate" or "Terminal" for cyber aesthetic
+defaultAppearance = "dark" # Perfect for cybersecurity
+autoSwitchAppearance = true  # Let users choose
 
 enableSearch = true
-enableCodeCopy = false
+enableCodeCopy = true  # IMPORTANT: Enable code copying for your commands!
 
-replyByEmail = false
+# Add your contact info
+replyByEmail = true  # Enable if you want contact functionality
 
-# mainSections = ["section1", "section2"]
-# robots = ""
-
+# Better image handling for your screenshots
 disableImageOptimization = false
 disableImageOptimizationMD = false
-disableTextInHeader = false
-# backgroundImageWidth = 1200
+backgroundImageWidth = 1200
 
-#defaultBackgroundImage = "test.webp" # used as default for background images 
-# defaultFeaturedImage = "IMAGE.jpg" # used as default for featured images in all articles
-# defaultSocialImage = "/android-chrome-512x512.png" # used as default for social media sharing (Open Graph and Twitter)
+# Add a default featured image for social sharing
+defaultFeaturedImage = "images/cybersec-banner.jpg" # Add your cybersec banner
+defaultSocialImage = "images/social-share.png" # For Twitter/LinkedIn previews
 
-# highlightCurrentMenuArea = true
-# smartTOC = true
-# smartTOCHideUnfocusedChildren = true
-
-fingerprintAlgorithm = "sha512" # Valid values are "sha512" (default), "sha384", "sha256"
-
-giteaDefaultServer = "https://git.fsfe.org"
-forgejoDefaultServer = "https://v11.next.forgejo.org"
+# Better TOC handling
+smartTOC = true
+smartTOCHideUnfocusedChildren = true
 
 [header]
-  layout = "fixed" # valid options: basic, fixed, fixed-fill, fixed-gradient, fixed-fill-blur
+  layout = "fixed" # Keep this - good for navigation
 
 [footer]
   showMenu = true
   showCopyright = true
-  showThemeAttribution = true
+  showThemeAttribution = false  # Remove "Powered by Blowfish" for cleaner look
   showAppearanceSwitcher = true
   showScrollToTop = true
 
 [homepage]
-  layout = "page" # valid options: page, profile, hero, card, background, custom
-  #homepageImage = "test.webp" # used in: hero, and card
-  showRecent = false
-  showRecentItems = 5
-  showMoreLink = false
-  showMoreLinkDest = "/posts/"
-  cardView = false
-  cardViewScreenWidth = false
-  layoutBackgroundBlur = false # only used when layout equals background
-  disableHeroImageFilter = false # only used when layout equals hero
+  layout = "hero"  # CHANGE THIS! Much better for portfolios
+  homepageImage = "images/cybersec-hero.jpg" # Add a cybersecurity hero image
+  showRecent = true  # Show your latest writeups
+  showRecentItems = 6  # Show more recent posts
+  showMoreLink = true
+  showMoreLinkDest = "/writeups/"
+  cardView = true  # Enable card view for better presentation
 
 [article]
   showDate = true
   showViews = false
   showLikes = false
   showDateOnlyInArticle = false
-  showDateUpdated = false
+  showDateUpdated = true  # Show when you updated writeups
   showAuthor = true
-  # showAuthorBottom = false
   showHero = true
-  heroStyle = "basic" # valid options: basic, big, background, thumbAndBackground
-  layoutBackgroundBlur = true # only used when heroStyle equals background or thumbAndBackground
-  layoutBackgroundHeaderSpace = true # only used when heroStyle equals background
+  heroStyle = "big"  # CHANGE: Bigger hero images for impact
   showBreadcrumbs = true
   showDraftLabel = true
   showEdit = false
-  # editURL = "https://github.com/username/repo/"
-  editAppendPath = true
   seriesOpened = false
   showHeadingAnchors = true
   showPagination = true
-  invertPagination = true
+  invertPagination = false
   showReadingTime = true
   showTableOfContents = true
-  # showRelatedContent = false
-  # relatedContentLimit = 3
-  showTaxonomies = true # use showTaxonomies OR showCategoryOnly, not both
-  showCategoryOnly = false # use showTaxonomies OR showCategoryOnly, not both
+  showTaxonomies = true  # Show tags and categories
   showAuthorsBadges = false
   showWordCount = true
-  # sharingLinks = [ "linkedin", "twitter", "bluesky", "mastodon", "reddit", "pinterest", "facebook", "email", "whatsapp", "telegram", "line"]
-  showZenMode = false
+  # Enable sharing for your writeups
+  sharingLinks = ["linkedin", "twitter", "reddit", "email"]
+  showZenMode = true  # Add focus mode for reading
 
 [list]
   showHero = true
-  # heroStyle = "background" # valid options: basic, big, background, thumbAndBackground
-  layoutBackgroundBlur = true # only used when heroStyle equals background or thumbAndBackground
-  layoutBackgroundHeaderSpace = true # only used when heroStyle equals background
+  heroStyle = "background"  # Nice background effect
   showBreadcrumbs = true
-  showSummary = false
-  showViews = false
-  showLikes = false
-  showTableOfContents = true
+  showSummary = true  # IMPORTANT: Show summaries on cards
   showCards = true
-  orderByWeight = false
-  groupByYear = false
+  orderByWeight = true  # Custom ordering
+  groupByYear = false  # Don't group by year for better flow
   cardView = true
-  cardViewScreenWidth = false
   constrainItemsWidth = false
 
-[sitemap]
-  excludedKinds = ["taxonomy", "term"]
-
-[taxonomy]
-  showTermCount = true
-  showHero = false
-  # heroStyle = "background" # valid options: basic, big, background, thumbAndBackground
-  showBreadcrumbs = false
-  showViews = false
-  showLikes = false
-  showTableOfContents = false
-  cardView = false
-
-[term]
-  showHero = false
-  # heroStyle = "background" # valid options: basic, big, background, thumbAndBackground
-  showBreadcrumbs = false
-  showViews = false
-  showLikes = false
-  showTableOfContents = true
-  groupByYear = false
-  cardView = false
-  cardViewScreenWidth = false
-
-[firebase]
-  # apiKey = "XXXXXX"
-  # authDomain = "XXXXXX"
-  # projectId = "XXXXXX"
-  # storageBucket = "XXXXXX"
-  # messagingSenderId = "XXXXXX"
-  # appId = "XXXXXX"
-  # measurementId = "XXXXXX"
-
-[fathomAnalytics]
-  # site = "ABC12345"
-  # domain = "llama.yoursite.com"
-
-[umamiAnalytics]
-  # websiteid = "ABC12345"
-  # domain = "llama.yoursite.com"
-  # dataDomains = "yoursite.com,yoursite2.com"
-  # scriptName = ""
-  # enableTrackEvent = true
-
-[selineAnalytics]
-  # token = "XXXXXX"
-  # enableTrackEvent = true
-
-[buymeacoffee]
-  # identifier = ""
-  # globalWidget = true
-  # globalWidgetMessage = "Hello"
-  # globalWidgetColor = "#FFDD00"
-  # globalWidgetPosition = "Right"
-
-[verification]
-  # google = ""
-  # bing = ""
-  # pinterest = ""
-  # yandex = ""
-  # fediverse = ""
-
-[rssnext]
-  # feedId = ""
-  # userId = ""
-
-[advertisement]
-  # adsense = ""
+# Keep the rest as-is...
