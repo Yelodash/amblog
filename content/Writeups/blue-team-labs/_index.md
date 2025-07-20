@@ -5,6 +5,8 @@ summary: Digital forensics, malware analysis, incident response, and network def
 layout: list
 weight: 5
 ShowDate: false
+showWordCount: false
+showReadingTime: false
 ---
 
 ---
