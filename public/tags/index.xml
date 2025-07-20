@@ -2,69 +2,69 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on BlackLotus</title>
-    <link>http://localhost:1313/tags/</link>
+    <link>https://your-domain.com/tags/</link>
     <description>Recent content in Tags on BlackLotus</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2025 A.M</copyright>
-    <lastBuildDate>Fri, 18 Jul 2025 14:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 18 Jul 2025 14:00:00 +0000</lastBuildDate><atom:link href="https://your-domain.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>SMB</title>
-      <link>http://localhost:1313/tags/smb/</link>
+      <link>https://your-domain.com/tags/smb/</link>
       <pubDate>Fri, 18 Jul 2025 14:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/smb/</guid>
+      <guid>https://your-domain.com/tags/smb/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Windows</title>
-      <link>http://localhost:1313/tags/windows/</link>
+      <link>https://your-domain.com/tags/windows/</link>
       <pubDate>Fri, 18 Jul 2025 14:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/windows/</guid>
+      <guid>https://your-domain.com/tags/windows/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>API</title>
-      <link>http://localhost:1313/tags/api/</link>
+      <link>https://your-domain.com/tags/api/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/api/</guid>
+      <guid>https://your-domain.com/tags/api/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Linux</title>
-      <link>http://localhost:1313/tags/linux/</link>
+      <link>https://your-domain.com/tags/linux/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/linux/</guid>
+      <guid>https://your-domain.com/tags/linux/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Nagios</title>
-      <link>http://localhost:1313/tags/nagios/</link>
+      <link>https://your-domain.com/tags/nagios/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/nagios/</guid>
+      <guid>https://your-domain.com/tags/nagios/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>SQL</title>
-      <link>http://localhost:1313/tags/sql/</link>
+      <link>https://your-domain.com/tags/sql/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/sql/</guid>
+      <guid>https://your-domain.com/tags/sql/</guid>
       <description></description>
       
     </item>

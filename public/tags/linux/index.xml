@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Linux on BlackLotus</title>
-    <link>http://localhost:1313/tags/linux/</link>
+    <link>https://your-domain.com/tags/linux/</link>
     <description>Recent content in Linux on BlackLotus</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2025 A.M</copyright>
-    <atom:link href="http://localhost:1313/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://your-domain.com/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Monitored</title>
-      <link>http://localhost:1313/writeups/red-team-ctfs/hack-the-box/monitored/</link>
+      <link>https://your-domain.com/writeups/red-team-ctfs/hack-the-box/monitored/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/writeups/red-team-ctfs/hack-the-box/monitored/</guid>
+      <guid>https://your-domain.com/writeups/red-team-ctfs/hack-the-box/monitored/</guid>
       <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/writeups/red-team-ctfs/hack-the-box/monitored/featured.png.png" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://your-domain.com/writeups/red-team-ctfs/hack-the-box/monitored/featured.png.png" />
     </item>
     
   </channel>
