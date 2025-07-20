@@ -2,39 +2,69 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Blowfish</title>
-    <link>//localhost:56961/</link>
+    <link>/</link>
     <description>Recent content on Blowfish</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2025 </copyright>
-    <lastBuildDate>Fri, 18 Jul 2025 14:00:00 +0000</lastBuildDate><atom:link href="//localhost:56961/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 18 Jul 2025 14:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>A.M Blog</title>
-      <link>//localhost:56961/home/index.md/</link>
+      <link>/home/index.md/</link>
       <pubDate>Fri, 18 Jul 2025 14:00:00 +0000</pubDate>
       
-      <guid>//localhost:56961/home/index.md/</guid>
+      <guid>/home/index.md/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>File Name</title>
-      <link>//localhost:56961/blog/first-post/index.md/</link>
+      <link>/blog/first-post/index.md/</link>
       <pubDate>Fri, 18 Jul 2025 14:00:00 +0000</pubDate>
       
-      <guid>//localhost:56961/blog/first-post/index.md/</guid>
+      <guid>/blog/first-post/index.md/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Writeups</title>
-      <link>//localhost:56961/writeups/index.md/</link>
+      <link>/writeups/blue-team/index.md/</link>
       <pubDate>Fri, 18 Jul 2025 14:00:00 +0000</pubDate>
       
-      <guid>//localhost:56961/writeups/index.md/</guid>
+      <guid>/writeups/blue-team/index.md/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Writeups</title>
+      <link>/writeups/cloud/index.md/</link>
+      <pubDate>Fri, 18 Jul 2025 14:00:00 +0000</pubDate>
+      
+      <guid>/writeups/cloud/index.md/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Writeups</title>
+      <link>/writeups/forensics/index.md/</link>
+      <pubDate>Fri, 18 Jul 2025 14:00:00 +0000</pubDate>
+      
+      <guid>/writeups/forensics/index.md/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Writeups</title>
+      <link>/writeups/red-team/index.md/</link>
+      <pubDate>Fri, 18 Jul 2025 14:00:00 +0000</pubDate>
+      
+      <guid>/writeups/red-team/index.md/</guid>
       <description></description>
       
     </item>
