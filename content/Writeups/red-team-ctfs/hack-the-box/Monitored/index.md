@@ -4,9 +4,7 @@ author: BlackLotus
 description: 
 draft: false
 weight: 1
-tags:
-  - SMB
-  - Windows
+tags: []
 categories: Red Team
 TocOpen: true
 showReadingTime: true
@@ -16,7 +14,7 @@ platforms: Hack The Box
 ---
 
 
-
+Windowsz
 ## Machine Overview
 
 Legacy is a beginner-friendly Windows machine that demonstrates the impact of unpatched systems. This machine is vulnerable to several critical SMB exploits including MS08-067 and MS17-010 (EternalBlue).
