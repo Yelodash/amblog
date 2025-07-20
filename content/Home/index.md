@@ -12,7 +12,8 @@ showWordCount: false
 showReadingTime: false
 showTableOfContents: false
 difficulty: 
-summary:
+summary: 
+showMoreLink: false
 ---
 
 
