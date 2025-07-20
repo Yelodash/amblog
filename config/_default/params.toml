@@ -74,8 +74,8 @@ smartTOCHideUnfocusedChildren = true
   showZenMode = true  # Add focus mode for reading
 
 [list]
-  showHero = true
-  heroStyle = "background"  # Nice background effect
+  #showHero = true
+  #heroStyle = "background"  # Nice background effect
   showBreadcrumbs = true
   showSummary = true  # IMPORTANT: Show summaries on cards
   showCards = true

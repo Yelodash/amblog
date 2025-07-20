@@ -1,5 +1,5 @@
 ---
-title: Red Team Ctfs
+title: Red Team
 description: Defensive cybersecurity exercises and incident response
 summary: Defensive cybersecurity exercises and incident response
 layout: list
