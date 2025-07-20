@@ -27,7 +27,7 @@ Legacy is a beginner-friendly Windows machine that demonstrates the impact of un
 - **Difficulty:** Easy
 
 
-![](image1.png.png)
+![](images/image1.png.png)
 
 ## Initial Reconnaissance
 
