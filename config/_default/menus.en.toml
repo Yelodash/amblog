@@ -14,22 +14,29 @@
 [[main]]
 name = "Home"
 pageRef = "/"
-weight = 10
+weight = 1
 
 # Top-level Writeups menu (now a real landing page)
 [[main]]
 identifier = "Writeups"
 name = "Writeups"
 pageRef = "Writeups"    # <- points to landing page
-weight = 20
+weight = 2
 
-# GitHub (internal or external — change as needed)
+
+# Linkedin (internal or external — change as needed)
 [[main]]
-name = "GitHub"
+identifier = "github"
 pre = "github" #icon 
-url = "https://github.com/yourusername"
-weight = 32
+url = "https://github.com/Yelodash"
+weight = 200
 
+# Linkedin (internal or external — change as needed)
+[[main]]
+identifier = "linkedin"
+pre = "linkedin" #icon 
+url = "https://www.linkedin.com/in/moustapha-antoine-mindaoudou-6123311a3/"
+weight = 205
 
 
 #[[main]]
@@ -75,7 +82,7 @@ weight = 32
 #   pageRef = "tags"
 #   weight = 10
 
-# [[footer]]
-#   name = "Categories"
-#   pageRef = "categories"
-#   weight = 20
+ [[footer]]
+   name = "Changelog"
+   pageRef = "changelog"
+#   weight = 10

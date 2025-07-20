@@ -11,10 +11,30 @@
     
     <item>
       <title>A.M Blog</title>
-      <link>/home/index.md/</link>
+      <link>/_index.md/</link>
       <pubDate>Fri, 18 Jul 2025 14:00:00 +0000</pubDate>
       
-      <guid>/home/index.md/</guid>
+      <guid>/_index.md/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>A.M Blog</title>
+      <link>/changelog/index.md/</link>
+      <pubDate>Fri, 18 Jul 2025 14:00:00 +0000</pubDate>
+      
+      <guid>/changelog/index.md/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>A.M Blog</title>
+      <link>/home/_index.md/</link>
+      <pubDate>Fri, 18 Jul 2025 14:00:00 +0000</pubDate>
+      
+      <guid>/home/_index.md/</guid>
       <description></description>
       
     </item>
