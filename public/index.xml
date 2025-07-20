@@ -10,21 +10,21 @@
     <lastBuildDate>Fri, 18 Jul 2025 14:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>File Name</title>
-      <link>/blog/first-post/index.md/</link>
+      <title></title>
+      <link>/home/index.md/</link>
       <pubDate>Fri, 18 Jul 2025 14:00:00 +0000</pubDate>
       
-      <guid>/blog/first-post/index.md/</guid>
+      <guid>/home/index.md/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>File Name</title>
-      <link>/home/index.md/</link>
+      <link>/blog/first-post/index.md/</link>
       <pubDate>Fri, 18 Jul 2025 14:00:00 +0000</pubDate>
       
-      <guid>/home/index.md/</guid>
+      <guid>/blog/first-post/index.md/</guid>
       <description></description>
       
     </item>

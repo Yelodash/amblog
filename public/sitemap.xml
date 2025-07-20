@@ -3,6 +3,12 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <url>
+    <loc>//localhost:1313/home/index.md/</loc>
+    <lastmod>2025-07-18T14:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>//localhost:1313/blog/</loc>
     <lastmod>2025-07-18T14:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
@@ -16,12 +22,6 @@
   </url>
   <url>
     <loc>//localhost:1313/blog/first-post/index.md/</loc>
-    <lastmod>2025-07-18T14:00:00+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>//localhost:1313/home/index.md/</loc>
     <lastmod>2025-07-18T14:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
