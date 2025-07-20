@@ -2,8 +2,9 @@
 # Refer to the theme docs for more details about each of these parameters.
 # https://blowfish.page/docs/getting-started/
 
-theme = "blowfish" # UNCOMMENT THIS LINE
-# baseURL = "https://your_domain.com/"
+theme = "blowfish"
+title = "BlackLotus - Cybersecurity Portfolio"
+baseURL = "https://your-domain.com/"  # Update when you deploy
 defaultContentLanguage = "en"
 
 # pluralizeListTitles = "true" # hugo function useful for non-english languages, find out more in  https://gohugo.io/getting-started/configuration/#pluralizelisttitles
@@ -16,7 +17,7 @@ buildFuture = false
 
 enableEmoji = true
 
-# googleAnalytics = "G-XXXXXXXXX"
+# googleAnalytics = "G-XXXXXXXXX"
 
 [pagination]
   pagerSize = 100
@@ -25,10 +26,13 @@ enableEmoji = true
   anchor = 'Center'
 
 [taxonomies]
-  tag = "tags"
-  category = "categories"
-  author = "authors"
-  series = "series"
+  tag = "tags"                    # /tags/web-exploitation/
+  category = "categories"         # /categories/red-team/
+  author = "authors"              # /authors/blacklotus/
+  series = "series"               # /series/htb-machines/
+  platform = "platforms"         # /platforms/hack-the-box/
+  difficulty = "difficulties"    # /difficulties/easy/
+  technique = "techniques"        # /techniques/privilege-escalation/
 
 [sitemap]
   changefreq = 'daily'
@@ -49,6 +53,18 @@ enableEmoji = true
     [[related.indices]]
         name = "categories"
         weight = 100
+
+    [[related.indices]]
+        name = "platforms"
+        weight = 80
+
+    [[related.indices]]
+        name = "techniques"
+        weight = 70
+
+    [[related.indices]]
+        name = "difficulties"
+        weight = 60
 
     [[related.indices]]
         name = "series"
