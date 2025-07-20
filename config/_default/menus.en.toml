@@ -26,7 +26,7 @@ weight = 2
 # Writeups - Main section landing page
 [[main]]
 identifier = "projects"
-name = "Project"
+name = "Projects"
 pageRef = "projects"
 weight = 3
 
