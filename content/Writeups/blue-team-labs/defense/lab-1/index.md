@@ -13,6 +13,7 @@ showWordCount: false
 showReadingTime: false
 showTableOfContents: true
 featuredImage: images/test
+featuredImageAlt:
 ---
 
 
