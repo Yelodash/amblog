@@ -8,12 +8,10 @@ weight: 1
 tags:
   - SMB
   - Windows
-categories: '"Red Team"'
+categories: Red Team
 TocOpen: true
 showReadingTime: true
 showTableOfContents: true
-featuredImage: images/test.png
-series: HTB Windows Machines
 difficulties: easy
 platforms: Hack The Box
 ---
