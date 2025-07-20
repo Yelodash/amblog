@@ -16,24 +16,19 @@ name = "Home"
 pageRef = "about"
 weight = 10
 
-# Top-level Writeups menu (Parent of Red and Blue)
+# Top-level Writeups menu (now a real landing page)
 [[main]]
 identifier = "writeups"
 name = "Writeups"
+pageRef = "posts/writeups"    # <- points to landing page
 weight = 20
 
+# Subcategories under Writeups
 [[main]]
 name = "Blue Team"
 parent = "writeups"
 pageRef = "posts/blue"
 weight = 21
-
-[[main]]
-name = "Forensics"
-parent = "writeups"
-pageRef = "posts/forensics"
-weight = 23
-
 
 [[main]]
 name = "Red Team"
@@ -42,13 +37,21 @@ pageRef = "posts/red"
 weight = 22
 
 [[main]]
+name = "Forensics"
+parent = "writeups"
+pageRef = "posts/forensics"
+weight = 23
+
+# Projects
+[[main]]
 name = "Projects"
 pageRef = "projects"
 weight = 31
 
+# GitHub (internal or external — change as needed)
 [[main]]
 name = "GitHub"
-pageRef= "github"
+url = "https://github.com/yourusername"
 weight = 32
 
 
