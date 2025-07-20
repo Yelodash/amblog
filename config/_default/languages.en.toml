@@ -12,10 +12,10 @@ title = "BlackLotus"
   # logo = "img/logo.png"
   # secondaryLogo = "img/secondary-logo.png"
   # description = "My awesome website"
-   copyright = "&copy; 2025 A.M. All Rights Reserved"
+   copyright = "&copy; 2025 Antoine Mindaoudou. All Rights Reserved"
 
  [params.author]
- 
+
    name = "Antoine Mindaoudou"
 #   email = "youremail@example.com"
     image = "test.webp"

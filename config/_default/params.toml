@@ -10,7 +10,7 @@ enableSearch = true
 enableCodeCopy = true  # IMPORTANT: Enable code copying for your commands!
 
 # Add your contact info
-replyByEmail = true  # Enable if you want contact functionality
+#replyByEmail = true  # Enable if you want contact functionality
 
 # Better image handling for your screenshots
 disableImageOptimization = false
@@ -43,7 +43,7 @@ smartTOCHideUnfocusedChildren = true
   layout = "hero"  # CHANGE THIS! Much better for portfolios
   homepageImage = "images/cybersec-hero.jpg" # Add a cybersecurity hero image
   showRecent = true  # Show your latest writeups
-  showRecentItems = 4  # Show more recent posts
+  showRecentItems = 6  # Show more recent posts
   showMoreLink = false
   showMoreLinkDest = "/writeups/"
   cardView = true  # Enable card view for better presentation
@@ -70,7 +70,7 @@ smartTOCHideUnfocusedChildren = true
   showAuthorsBadges = false
   showWordCount = true
   # Enable sharing for your writeups
-  sharingLinks = ["linkedin","github"]
+  #sharingLinks = ["linkedin","github"]
   showZenMode = true  # Add focus mode for reading
 
 [list]

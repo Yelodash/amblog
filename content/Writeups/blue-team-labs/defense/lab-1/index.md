@@ -14,6 +14,7 @@ showReadingTime: true
 showTableOfContents: true
 difficulties: easy
 platforms: Hack The Box
+cover: "image: \"images/test.png\"\ralt: \"test: \"test\"\rrelative: true\rhidden: false"
 ---
 
 ---

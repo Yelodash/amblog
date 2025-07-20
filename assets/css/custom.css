@@ -1,45 +1,46 @@
 /* Reset to smaller, equal-sized cards with centered text */
 
-/* Default: ALL headings are left-aligned */
-h1 {
-    text-align: left !important;
-}
-
-/* ONLY center headings on these specific pages from your menu */
-body[data-url="/"] h1,                                          /* Home */
-body[data-url="/writeups/"] h1,                                 /* Writeups main */
-body[data-url="/writeups/blue-team-labs/"] h1,                 /* Blue Team Labs */
-body[data-url="/writeups/blue-team-labs/defense/"] h1,         /* Defense */
-body[data-url="/writeups/blue-team-labs/forensics/"] h1,       /* Forensics */
-body[data-url="/writeups/red-team-ctfs/"] h1,                  /* Red Team CTFs */
-body[data-url="/writeups/red-team-ctfs/hack-the-box/"] h1,     /* Hack The Box */
-body[data-url="/writeups/red-team-ctfs/proving-grounds/"] h1,  /* Proving Grounds */
-body[data-url="/writeups/red-team-ctfs/virtual-hacking-labs/"] h1, /* Virtual Hacking Labs */
-body[data-url="/writeups/red-team-ctfs/vulnlab/"] h1 {         /* VulnLab */
+/* Simple approach: Center headings only on pages that have .grid (card layouts) */
+.grid ~ h1,
+h1 + .grid ~ h1,
+body:has(.grid) h1:first-of-type {
     text-align: center !important;
     margin: 2rem auto !important;
 }
 
-/* Alternative URL targeting (in case data-url doesn't work) */
-body[class*="home"] h1:first-of-type,
-body[class*="writeups"] h1:first-of-type,
-body[class*="blue-team-labs"] h1:first-of-type,
-body[class*="defense"] h1:first-of-type,
-body[class*="forensics"] h1:first-of-type,
-body[class*="red-team-ctfs"] h1:first-of-type,
-body[class*="hack-the-box"] h1:first-of-type,
-body[class*="proving-grounds"] h1:first-of-type,
-body[class*="virtual-hacking-labs"] h1:first-of-type,
-body[class*="vulnlab"] h1:first-of-type {
+/* Alternative: Center h1 only when there's a grid on the page */
+.grid {
+    /* This will be our indicator for section pages */
+}
+
+.grid + * h1,
+* + .grid ~ h1,
+body .grid:first-child ~ * h1:first-of-type {
+    text-align: center !important;
+}
+
+/* Simpler approach - target pages with specific content structure */
+body:has(.grid) main h1:first-child,
+main:has(.grid) h1:first-child {
     text-align: center !important;
     margin: 2rem auto !important;
 }
 
-/* Make sure individual posts NEVER get centered */
+/* Nuclear option - if page has cards, center the first h1 */
+main .grid {
+    /* Empty rule just to target */
+}
+
+main:has(.grid) > * > h1:first-of-type,
+main .grid ~ * h1,
+h1:has(+ * .grid) {
+    text-align: center !important;
+    margin: 2rem auto !important;
+}
+
+/* Make sure individual posts stay left-aligned */
 body.single h1,
-article h1,
-.article h1,
-.prose h1 {
+article h1 {
     text-align: left !important;
 }
 
