@@ -1,5 +1,5 @@
 ---
-title: Cybersecurity Writeups
+title: Red Team Ctfs
 description: 
 layout: list
 weight: 10
