@@ -10,8 +10,3 @@ showReadingTime: false
 
 ---
 
-# Red Team CTFs
-
-
-Offensive cybersecurity challenges and penetration testing exercises.
-

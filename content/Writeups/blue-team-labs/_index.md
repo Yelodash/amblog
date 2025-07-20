@@ -11,8 +11,5 @@ showReadingTime: false
 
 ---
 
-# Blue Team Labs
 
-
-Defensive cybersecurity exercises and incident response scenarios.
 
