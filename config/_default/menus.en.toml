@@ -10,24 +10,59 @@
 # overridden by providing a weight value. The menu will then be
 # ordered by weight from lowest to highest.
 
+# Home
 [[main]]
-  name = "About"
-  pageRef = "about"
-  weight = 10
+name = "Home"
+pageRef = "about"
+weight = 10
+
+# Top-level Writeups menu (Parent of Red and Blue)
+[[main]]
+identifier = "writeups"
+name = "Writeups"
+weight = 20
+
+[[main]]
+name = "Blue Team"
+parent = "writeups"
+pageRef = "posts/blue"
+weight = 21
+
+[[main]]
+name = "Red Team"
+parent = "writeups"
+pageRef = "posts/red"
+weight = 22
+
+# Top-level Resources menu (Parent of Projects and GitHub)
+[[main]]
+identifier = "resources"
+name = "Resources"
+weight = 30
+
+[[main]]
+name = "Projects"
+parent = "resources"
+pageRef = "projects"
+weight = 31
+
+[[main]]
+name = "GitHub"
+parent = "resources"
+url = "https://github.com/yourusername"
+weight = 32
+
+
 
 #[[main]]
 #  name = "Parent"
 #  weight = 20
 
-[[main]]
-  name = "Blog"
-  pageRef = "blog"
-  weight = 20
-
 #[[main]]
-#  name = "example sub-menu 2"
-#  parent = "Parent"
-#  pageRef = "posts"
+#  name = "Blog"
+#  pageRef = "blog"
+#  weight = 20
+
 #  weight = 20
 
 #[[subnavigation]]
