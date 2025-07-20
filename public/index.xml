@@ -20,21 +20,21 @@
     </item>
     
     <item>
-      <title>A.M Blog</title>
-      <link>/writeups/index.md/</link>
-      <pubDate>Fri, 18 Jul 2025 14:00:00 +0000</pubDate>
-      
-      <guid>/writeups/index.md/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
       <title>File Name</title>
       <link>/blog/first-post/index.md/</link>
       <pubDate>Fri, 18 Jul 2025 14:00:00 +0000</pubDate>
       
       <guid>/blog/first-post/index.md/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Writeups</title>
+      <link>/writeups/index.md/</link>
+      <pubDate>Fri, 18 Jul 2025 14:00:00 +0000</pubDate>
+      
+      <guid>/writeups/index.md/</guid>
       <description></description>
       
     </item>
