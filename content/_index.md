@@ -29,7 +29,6 @@ showMoreLinkDest: /writeups/
 
 I'm a dedicated cybersecurity professional with expertise in both **offensive** and **defensive** security operations. My passion lies in understanding complex attack vectors, developing robust defense strategies, and sharing knowledge with the cybersecurity community.
 
-## Latest Writeups
 
 
 
