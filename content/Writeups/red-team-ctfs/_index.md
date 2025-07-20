@@ -2,7 +2,7 @@
 title: Red Team Ctfs
 description: Defensive cybersecurity exercises and incident response
 summary: Defensive cybersecurity exercises and incident response
-layout: list
+layout: page
 ShowDate: false
 showWordCount: false
 showReadingTime: false
