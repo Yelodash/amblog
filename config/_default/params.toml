@@ -40,7 +40,7 @@ smartTOCHideUnfocusedChildren = true
   homepageImage = "images/cybersec-hero.jpg" # Add a cybersecurity hero image
   showRecent = true  # Show your latest writeups
   showRecentItems = 6  # Show more recent posts
-  showMoreLink = true
+  showMoreLink = false
   showMoreLinkDest = "/writeups/"
   cardView = true  # Enable card view for better presentation
 

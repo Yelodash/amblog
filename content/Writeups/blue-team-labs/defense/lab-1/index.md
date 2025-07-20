@@ -6,7 +6,6 @@ draft: false
 weight: 1
 tags: 
 author: 
-showToc: true
 TocOpen: true
 comments: false
 showSummary: false
