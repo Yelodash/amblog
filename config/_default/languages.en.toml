@@ -15,9 +15,10 @@ title = "BlackLotus"
    copyright = "&copy; 2025 A.M. All Rights Reserved"
 
  [params.author]
-   name = "A.M"
+ 
+   name = "Antoine Mindaoudou"
 #   email = "youremail@example.com"
-    image = "img/blowfish_logo.png"
+    image = "test.webp"
 #   imageQuality = 96
 #   headline = "I'm only human"
 #   bio = "A little bit about you"
