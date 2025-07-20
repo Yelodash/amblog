@@ -44,14 +44,6 @@ article h1 {
     text-align: left !important;
 }
 
-/* Center non-heading content near grid */
-main:has(.grid) > p,
-main:has(.grid) > div > p {
-    text-align: center !important;
-    margin: 1rem auto !important;
-    max-width: 60ch;
-}
-
 /* Make cards equal size and center them */
 .grid {
     gap: 2rem !important;
@@ -59,14 +51,6 @@ main:has(.grid) > div > p {
     margin: 0 auto !important;
     padding: 2rem !important;
     justify-content: center !important;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 300px)) !important;
-}
-
-main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
 }
 
 /* Make cards equal and normal size */
@@ -75,6 +59,16 @@ main {
     max-width: 300px !important;
     width: 100% !important;
     height: auto !important;
+}
+
+/* Grid layout for equal-sized cards */
+.grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 300px)) !important;
+    justify-content: center !important;
+}
+
+/* Center text inside cards WITHOUT changing card structure */
+.grid > * {
     text-align: center !important;
 }
 
@@ -103,7 +97,7 @@ main {
         max-width: 90% !important;
         padding: 1rem !important;
     }
-
+    
     .grid > * {
         min-width: auto !important;
         max-width: 100% !important;
