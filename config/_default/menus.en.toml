@@ -23,6 +23,21 @@ name = "Writeups"
 pageRef = "writeups"
 weight = 2
 
+# Writeups - Main section landing page
+[[main]]
+identifier = "projects"
+name = "Project"
+pageRef = "project"
+weight = 3
+
+# Writeups - Main section landing page
+[[main]]
+identifier = "about me"
+name = "About me"
+pageRef = "about me"
+weight = 4
+
+
 # Blue Team Labs - Parent menu item
 [[main]]
 identifier = "blue-team-labs"

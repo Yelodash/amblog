@@ -1,6 +1,6 @@
 ---
 title: Cybersecurity Writeups
-description: A collection of Writeups on the the labs I have done in both Red Team side and Blue Team side.
+description: 
 layout: list
 weight: 20
 ShowDate: false
