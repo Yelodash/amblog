@@ -12,7 +12,7 @@ comments: false
 showSummary: false
 showWordCount: false
 showReadingTime: false
-showTableOfContents: false
+showTableOfContents: true
 ---
 
 
