@@ -18,7 +18,7 @@ weight = 10
 
 # Top-level Writeups menu (now a real landing page)
 [[main]]
-identifier = "writeups"
+identifier = "Writeups"
 name = "Writeups"
 pageRef = "posts/writeups"    # <- points to landing page
 weight = 20
@@ -26,20 +26,26 @@ weight = 20
 # Subcategories under Writeups
 [[main]]
 name = "Blue Team"
-parent = "writeups"
+parent = "Writeups"
 pageRef = "posts/blue"
 weight = 21
 
 [[main]]
 name = "Red Team"
-parent = "writeups"
+parent = "Writeups"
 pageRef = "posts/red"
 weight = 22
 
 [[main]]
 name = "Forensics"
-parent = "writeups"
+parent = "Writeups"
 pageRef = "posts/forensics"
+weight = 23
+
+[[main]]
+name = "Cloud"
+parent = "Writeups"
+pageRef = "posts/Cloud"
 weight = 23
 
 # Projects
