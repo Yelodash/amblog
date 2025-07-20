@@ -16,73 +16,101 @@ name = "Home"
 pageRef = "/"
 weight = 1
 
-# Top-level Writeups menu (now a real landing page)
+# Writeups - Main section landing page
 [[main]]
-identifier = "Writeups"
+identifier = "writeups"
 name = "Writeups"
-pageRef = "Writeups"    # <- points to landing page
+pageRef = "writeups"
 weight = 2
 
+# Blue Team Labs - Parent menu item
+[[main]]
+identifier = "blue-team"
+name = "Blue Team"
+pageRef = "writeups/blue-team-labs"
+parent = "writeups"
+weight = 10
 
-# Linkedin (internal or external — change as needed)
+# Blue Team subsections
+[[main]]
+identifier = "defense"
+name = "Defense"
+pageRef = "writeups/blue-team-labs/defense"
+parent = "blue-team"
+weight = 11
+
+[[main]]
+identifier = "forensics"
+name = "Forensics"
+pageRef = "writeups/blue-team-labs/forensics"
+parent = "blue-team"
+weight = 12
+
+# Red Team CTFs - Parent menu item
+[[main]]
+identifier = "red-team"
+name = "Red Team"
+pageRef = "writeups/red-team-ctfs"
+parent = "writeups"
+weight = 20
+
+# Red Team subsections
+[[main]]
+identifier = "hack-the-box"
+name = "Hack The Box"
+pageRef = "writeups/red-team-ctfs/hack-the-box"
+parent = "red-team"
+weight = 21
+
+[[main]]
+identifier = "proving-grounds"
+name = "Proving Grounds"
+pageRef = "writeups/red-team-ctfs/proving-grounds"
+parent = "red-team"
+weight = 22
+
+[[main]]
+identifier = "virtual-hacking-labs"
+name = "Virtual Hacking Labs"
+pageRef = "writeups/red-team-ctfs/virtual-hacking-labs"
+parent = "red-team"
+weight = 23
+
+[[main]]
+identifier = "vulnlab"
+name = "VulnLab"
+pageRef = "writeups/red-team-ctfs/vulnlab"
+parent = "red-team"
+weight = 24
+
+# Templates section (if you want it in main menu)
+# [[main]]
+# identifier = "templates"
+# name = "Templates"
+# pageRef = "templates"
+# weight = 100
+
+# External links
 [[main]]
 identifier = "github"
-pre = "github" #icon 
+name = "GitHub"
+pre = "github" # icon 
 url = "https://github.com/Yelodash"
 weight = 200
 
-# Linkedin (internal or external — change as needed)
 [[main]]
 identifier = "linkedin"
-pre = "linkedin" #icon 
+name = "LinkedIn"
+pre = "linkedin" # icon 
 url = "https://www.linkedin.com/in/moustapha-antoine-mindaoudou-6123311a3/"
 weight = 205
-
-
-#[[main]]
-#  name = "Parent"
-#  weight = 20
-
-#[[main]]
-#  name = "Blog"
-#  pageRef = "blog"
-#  weight = 20
-
-#  weight = 20
-
-#[[subnavigation]]
-#  name = "An interesting topic"
-#  pageRef = "tags/interesting-topic"
-#  weight = 10
-
-#[[subnavigation]]
-#  name = "My Awesome Category"
-#  pre = "github"
-#  pageRef = "categories/awesome"
-#  weight = 20
-
-#[[main]]
-#  name = "Categories"
-#  pageRef = "categories"
-#  weight = 20
-
-#[[main]]
-#  name = "Tags"
-#  pageRef = "tags"
-#  weight = 30
-
 
 # -- Footer Menu --
 # The footer menu is displayed at the bottom of the page, just before
 # the copyright notice. Configure as per the main menu above.
 
+[[footer]]
+name = "Changelog"
+pageRef = "changelog"
+weight = 10
 
-# [[footer]]
-#   name = "Tags"
-#   pageRef = "tags"
-#   weight = 10
-
- [[footer]]
-   name = "Changelog"
-   pageRef = "changelog"
-#   weight = 10
