@@ -1,0 +1,17 @@
+/* Center footer social icons */
+.footer-social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Center footer content */
+footer .container {
+    text-align: center;
+}
+
+/* Style the footer links */
+footer .social-links {
+    justify-content: center;
+}

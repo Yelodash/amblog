@@ -2,7 +2,7 @@ disabled = false
 languageCode = "en"
 languageName = "English"
 weight = 1
-title = "Blowfish"
+title = "BlackLotus"
 
 [params]
   displayName = "EN"
@@ -12,12 +12,12 @@ title = "Blowfish"
   # logo = "img/logo.png"
   # secondaryLogo = "img/secondary-logo.png"
   # description = "My awesome website"
-  # copyright = "Copy, _right?_ :thinking_face:"
+   copyright = "&copy; 2025 A.M. All Rights Reserved"
 
-# [params.author]
-#   name = "Your name here"
+ [params.author]
+   name = "A.M"
 #   email = "youremail@example.com"
-#   image = "img/blowfish_logo.png"
+    image = "img/blowfish_logo.png"
 #   imageQuality = 96
 #   headline = "I'm only human"
 #   bio = "A little bit about you"
