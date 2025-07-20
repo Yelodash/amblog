@@ -2,12 +2,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>vulnlab on BlackLotus</title>
-    <link>http://localhost:1313/writeups/red-team-ctfs/vulnlab/</link>
+    <link>https://your-domain.com/writeups/red-team-ctfs/vulnlab/</link>
     <description>Recent content in vulnlab on BlackLotus</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>&amp;copy; 2025 A.M. All Rights Reserved</copyright>
-    <atom:link href="http://localhost:1313/writeups/red-team-ctfs/vulnlab/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://your-domain.com/writeups/red-team-ctfs/vulnlab/index.xml" rel="self" type="application/rss+xml" />
     
   </channel>
 </rss>
