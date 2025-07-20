@@ -1,92 +1,104 @@
-/* Custom CSS for better centering and spacing */
+/* Reset to smaller, equal-sized cards with centered text */
 
-/* Center main content containers */
-.prose {
-    max-width: 75ch !important;
+/* Default: ALL headings are left-aligned */
+h1 {
+    text-align: left !important;
+}
+
+/* ONLY center headings on these specific pages from your menu */
+body[data-url="/"] h1,                                          /* Home */
+body[data-url="/writeups/"] h1,                                 /* Writeups main */
+body[data-url="/writeups/blue-team-labs/"] h1,                 /* Blue Team Labs */
+body[data-url="/writeups/blue-team-labs/defense/"] h1,         /* Defense */
+body[data-url="/writeups/blue-team-labs/forensics/"] h1,       /* Forensics */
+body[data-url="/writeups/red-team-ctfs/"] h1,                  /* Red Team CTFs */
+body[data-url="/writeups/red-team-ctfs/hack-the-box/"] h1,     /* Hack The Box */
+body[data-url="/writeups/red-team-ctfs/proving-grounds/"] h1,  /* Proving Grounds */
+body[data-url="/writeups/red-team-ctfs/virtual-hacking-labs/"] h1, /* Virtual Hacking Labs */
+body[data-url="/writeups/red-team-ctfs/vulnlab/"] h1 {         /* VulnLab */
+    text-align: center !important;
+    margin: 2rem auto !important;
+}
+
+/* Alternative URL targeting (in case data-url doesn't work) */
+body[class*="home"] h1:first-of-type,
+body[class*="writeups"] h1:first-of-type,
+body[class*="blue-team-labs"] h1:first-of-type,
+body[class*="defense"] h1:first-of-type,
+body[class*="forensics"] h1:first-of-type,
+body[class*="red-team-ctfs"] h1:first-of-type,
+body[class*="hack-the-box"] h1:first-of-type,
+body[class*="proving-grounds"] h1:first-of-type,
+body[class*="virtual-hacking-labs"] h1:first-of-type,
+body[class*="vulnlab"] h1:first-of-type {
+    text-align: center !important;
+    margin: 2rem auto !important;
+}
+
+/* Make sure individual posts NEVER get centered */
+body.single h1,
+article h1,
+.article h1,
+.prose h1 {
+    text-align: left !important;
+}
+
+/* Make cards equal size and center them */
+.grid {
+    gap: 2rem !important;
+    max-width: 700px !important;
     margin: 0 auto !important;
+    padding: 2rem !important;
+    justify-content: center !important;
 }
 
-/* Center article lists and cards */
-.article-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem;
+/* Make cards equal and normal size */
+.grid > * {
+    min-width: 280px !important;
+    max-width: 300px !important;
+    width: 100% !important;
+    height: auto !important;
 }
 
-/* Better card spacing and centering */
-.article-card {
-    margin: 0 auto;
-    max-width: 400px;
-    width: 100%;
+/* Grid layout for equal-sized cards */
+.grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 300px)) !important;
+    justify-content: center !important;
 }
 
-/* Center section headings */
-.section-heading {
-    text-align: center;
-    margin: 3rem auto 2rem auto;
+/* Center text inside cards WITHOUT changing card structure */
+.grid > * {
+    text-align: center !important;
 }
 
-/* Center writeups grid */
-.writeups-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem;
+/* Center titles specifically */
+.grid > * h2,
+.grid > * h3,
+.grid > * .title {
+    text-align: center !important;
+    margin-bottom: 1rem !important;
 }
 
-/* Center cards in grid layout */
-.cards-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 2rem;
-    justify-content: center;
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 2rem 1rem;
+/* Center descriptions */
+.grid > * p {
+    text-align: center !important;
 }
 
-/* Center homepage content */
-.homepage-content {
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
-    padding: 2rem;
+/* Keep normal padding */
+.grid > * > * {
+    padding: 1.5rem !important;
 }
 
-/* Center recent posts section */
-.recent-posts {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 2rem;
-}
-
-/* Better spacing for sections */
-.content-section {
-    margin: 3rem auto;
-    padding: 0 2rem;
-}
-
-/* Center navigation breadcrumbs */
-.breadcrumbs {
-    justify-content: center;
-    margin: 1rem auto;
-}
-
-/* Responsive centering */
+/* Mobile adjustments */
 @media (max-width: 768px) {
-    .cards-grid {
-        grid-template-columns: 1fr;
-        max-width: 90%;
+    .grid {
+        grid-template-columns: 1fr !important;
+        max-width: 90% !important;
+        padding: 1rem !important;
     }
     
-    .article-list {
-        padding: 1rem;
-    }
-    
-    .content-section {
-        padding: 0 1rem;
+    .grid > * {
+        min-width: auto !important;
+        max-width: 100% !important;
     }
 }
