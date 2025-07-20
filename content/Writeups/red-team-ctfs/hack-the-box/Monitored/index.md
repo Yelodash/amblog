@@ -4,7 +4,11 @@ author: BlackLotus
 description: 
 draft: false
 weight: 1
-tags: []
+tags:
+  - "#SQL"
+  - "#API"
+  - Nagios
+  - Linux
 categories: Red Team
 TocOpen: true
 showReadingTime: true
