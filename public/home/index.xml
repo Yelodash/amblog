@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Homes on Blowfish</title>
-    <link>//localhost:1313/home/</link>
+    <link>/home/</link>
     <description>Recent content in Homes on Blowfish</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2025 </copyright>
-    <lastBuildDate>Fri, 18 Jul 2025 14:00:00 +0000</lastBuildDate><atom:link href="//localhost:1313/home/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 18 Jul 2025 14:00:00 +0000</lastBuildDate><atom:link href="/home/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title></title>
-      <link>//localhost:1313/home/index.md/</link>
+      <title>A.M Blog</title>
+      <link>/home/index.md/</link>
       <pubDate>Fri, 18 Jul 2025 14:00:00 +0000</pubDate>
       
-      <guid>//localhost:1313/home/index.md/</guid>
+      <guid>/home/index.md/</guid>
       <description></description>
       
     </item>
