@@ -1,5 +1,5 @@
 ---
-title: vulnlab
+title: proving-grounds
 description: 
 layout: list
 weight: 10

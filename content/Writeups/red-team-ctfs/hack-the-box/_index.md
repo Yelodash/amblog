@@ -1,5 +1,5 @@
 ---
-title: vulnlab
+title: hack-the-box
 description: 
 layout: list
 weight: 10

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Red Team Ctfs on Blowfish</title>
+    <title>vulnlab on Blowfish</title>
     <link>/writeups/red-team-ctfs/</link>
-    <description>Recent content in Red Team Ctfs on Blowfish</description>
+    <description>Recent content in vulnlab on Blowfish</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2025 </copyright>

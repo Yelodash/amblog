@@ -1,5 +1,5 @@
 ---
-title: vulnlab
+title: forensics
 description: 
 layout: list
 weight: 10

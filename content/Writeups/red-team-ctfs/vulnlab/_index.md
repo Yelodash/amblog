@@ -1,5 +1,5 @@
 ---
-title: vulnlab
+title: Red Team Ctfs
 description: 
 layout: list
 weight: 10

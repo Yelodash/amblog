@@ -1,5 +1,5 @@
 ---
-title: vulnlab
+title: Virtual Hacking labs
 description: 
 layout: list
 weight: 10

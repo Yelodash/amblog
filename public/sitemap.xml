@@ -8,6 +8,36 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>/writeups/blue-team-labs/defense/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>/writeups/blue-team-labs/forensics/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>/writeups/red-team-ctfs/hack-the-box/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>/writeups/red-team-ctfs/proving-grounds/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>/writeups/red-team-ctfs/vulnlab/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>/writeups/red-team-ctfs/virtual-hacking-labs/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>/writeups/red-team-ctfs/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
