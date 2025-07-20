@@ -2,7 +2,7 @@
 title: File Name
 date: 2025-07-18T14:00:00Z
 description: Professional cybersecurity portfolio showcasing Red Team and Blue Team expertise
-layout: list
+layout: page
 author: BlackLotus
 showRecent: "true"
 showRecentItems: 5
