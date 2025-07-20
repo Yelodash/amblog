@@ -25,8 +25,8 @@ weight = 2
 
 # Blue Team Labs - Parent menu item
 [[main]]
-identifier = "blue-team"
-name = "Blue Team"
+identifier = "blue-team-labs"
+name = "Blue Team Labs"
 pageRef = "writeups/blue-team-labs"
 parent = "writeups"
 weight = 10
@@ -36,20 +36,20 @@ weight = 10
 identifier = "defense"
 name = "Defense"
 pageRef = "writeups/blue-team-labs/defense"
-parent = "blue-team"
+parent = "blue-team-labs"
 weight = 11
 
 [[main]]
 identifier = "forensics"
 name = "Forensics"
 pageRef = "writeups/blue-team-labs/forensics"
-parent = "blue-team"
+parent = "blue-team-labs"
 weight = 12
 
 # Red Team CTFs - Parent menu item
 [[main]]
-identifier = "red-team"
-name = "Red Team"
+identifier = "red-team-ctfs"
+name = "Red Team CTFs"
 pageRef = "writeups/red-team-ctfs"
 parent = "writeups"
 weight = 20
@@ -59,28 +59,28 @@ weight = 20
 identifier = "hack-the-box"
 name = "Hack The Box"
 pageRef = "writeups/red-team-ctfs/hack-the-box"
-parent = "red-team"
+parent = "red-team-ctfs"
 weight = 21
 
 [[main]]
 identifier = "proving-grounds"
 name = "Proving Grounds"
 pageRef = "writeups/red-team-ctfs/proving-grounds"
-parent = "red-team"
+parent = "red-team-ctfs"
 weight = 22
 
 [[main]]
 identifier = "virtual-hacking-labs"
 name = "Virtual Hacking Labs"
 pageRef = "writeups/red-team-ctfs/virtual-hacking-labs"
-parent = "red-team"
+parent = "red-team-ctfs"
 weight = 23
 
 [[main]]
 identifier = "vulnlab"
 name = "VulnLab"
 pageRef = "writeups/red-team-ctfs/vulnlab"
-parent = "red-team"
+parent = "red-team-ctfs"
 weight = 24
 
 # Templates section (if you want it in main menu)
@@ -113,4 +113,5 @@ weight = 205
 name = "Changelog"
 pageRef = "changelog"
 weight = 10
+
 
