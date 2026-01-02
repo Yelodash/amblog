@@ -103,3 +103,68 @@ article h1 {
         max-width: 100% !important;
     }
 }
+
+/* --- START PROFILE BOX FIX --- */
+/* Paste this at the very bottom of assets/css/custom.css */
+
+/* 1. Target the Profile Container (The Square) */
+/* We use the specific classes from your HTML to override the default centering */
+.prose .shadow-xl {
+    /* Stop centering the box itself */
+    margin-left: 0 !important;
+    margin-right: auto !important;
+
+    /* Make the box smaller (Adjust 400px to change size) */
+    max-width: 400px !important; 
+    width: 100% !important;
+    
+    /* Remove any transform centering */
+    transform: none !important;
+    left: 0 !important;
+}
+
+/* 2. Target the content INSIDE the box */
+/* Your theme sets 'items-center' and 'text-center' by default. We must reverse that. */
+.prose .shadow-xl > div.flex.flex-col {
+    align-items: flex-start !important; /* Move items to Left */
+    text-align: left !important;        /* Align text to Left */
+    padding-top: 3rem !important;       /* Add space at top */
+    padding-left: 2rem !important;      /* Add space at left */
+}
+
+/* 3. Fix the Profile Image */
+/* Images are often auto-centered by margins. We force it left. */
+.prose .shadow-xl img {
+    margin-left: 0 !important;
+    margin-right: auto !important;
+    
+    /* Optional: Resize image if the box is now smaller */
+    width: 120px !important;
+    height: 120px !important;
+}
+
+/* 4. Fix the Title and Description Text */
+.prose .shadow-xl h1,
+.prose .shadow-xl .text-2xl,
+.prose .shadow-xl p {
+    text-align: left !important;
+    width: 100% !important;
+}
+
+/* 5. MOBILE SAFEGUARD */
+/* On phones, we want it to go back to the center, or it looks broken. */
+@media (max-width: 640px) {
+    .prose .shadow-xl {
+        margin: 0 auto !important;
+        max-width: 100% !important;
+    }
+    .prose .shadow-xl > div.flex.flex-col {
+        align-items: center !important;
+        text-align: center !important;
+        padding-left: 1rem !important; /* Reset padding */
+    }
+    .prose .shadow-xl img {
+        margin: 0 auto !important;
+    }
+}
+/* --- END PROFILE BOX FIX --- */
