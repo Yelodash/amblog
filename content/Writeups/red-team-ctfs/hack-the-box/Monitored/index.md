@@ -102,7 +102,6 @@ https://support.nagios.com/forum/viewtopic.php?t=58783
 
 ## Exploitation
 
-
 ### Getting the token
 
 I went on burp and intercepted the login post request andkept the same **username** and **password**

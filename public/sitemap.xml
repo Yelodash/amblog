@@ -3,77 +3,77 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <url>
-    <loc>http://localhost:53928/writeups/blue-team-labs/defense/lab-1/</loc>
+    <loc>http://localhost:1313/writeups/blue-team-labs/defense/lab-1/</loc>
     <lastmod>2025-07-18T14:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:53928/writeups/red-team-ctfs/hack-the-box/monitored/</loc>
+    <loc>http://localhost:1313/writeups/red-team-ctfs/hack-the-box/monitored/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:53928/writeups/blue-team-labs/defense/</loc>
+    <loc>http://localhost:1313/writeups/blue-team-labs/defense/</loc>
     <lastmod>2025-07-18T14:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:53928/writeups/blue-team-labs/forensics/</loc>
+    <loc>http://localhost:1313/writeups/blue-team-labs/forensics/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:53928/writeups/red-team-ctfs/</loc>
+    <loc>http://localhost:1313/writeups/red-team-ctfs/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:53928/writeups/</loc>
+    <loc>http://localhost:1313/writeups/</loc>
     <lastmod>2025-07-18T14:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:53928/projects/</loc>
+    <loc>http://localhost:1313/projects/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:53928/about-me/</loc>
+    <loc>http://localhost:1313/about-me/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:53928/writeups/blue-team-labs/</loc>
+    <loc>http://localhost:1313/writeups/blue-team-labs/</loc>
     <lastmod>2025-07-18T14:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:53928/</loc>
+    <loc>http://localhost:1313/</loc>
     <lastmod>2025-07-18T14:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:53928/writeups/red-team-ctfs/hack-the-box/</loc>
+    <loc>http://localhost:1313/writeups/red-team-ctfs/hack-the-box/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:53928/writeups/red-team-ctfs/proving-grounds/</loc>
+    <loc>http://localhost:1313/writeups/red-team-ctfs/proving-grounds/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:53928/writeups/red-team-ctfs/virtual-hacking-labs/</loc>
+    <loc>http://localhost:1313/writeups/red-team-ctfs/virtual-hacking-labs/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:53928/writeups/red-team-ctfs/vulnlab/</loc>
+    <loc>http://localhost:1313/writeups/red-team-ctfs/vulnlab/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>

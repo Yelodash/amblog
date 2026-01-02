@@ -3,7 +3,7 @@
 # https://blowfish.page/docs/getting-started/
 
 theme = "blowfish"
-title = "BlackLotus - Cybersecurity Portfolio"
+title = "Antoine Mindaoudou - Portfolio"
 baseURL = "https://your-domain.com/"  # Update when you deploy
 defaultContentLanguage = "en"
 
