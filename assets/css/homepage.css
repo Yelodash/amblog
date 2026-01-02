@@ -1,0 +1,67 @@
+/* assets/css/homepage.css */
+
+/* 1. Target the main Hero container */
+/* The ID #hero is standard in Blowfish for this layout */
+#hero {
+    /* Stop vertical centering (move to top) */
+    justify-content: flex-start !important; 
+    
+    /* Stop horizontal centering (move to left) */
+    align-items: flex-start !important; 
+    
+    /* Reset text alignment to left */
+    text-align: left !important;
+    
+    /* Add some breathing room from the top/left */
+    padding-top: 4rem !important; 
+    padding-left: 2rem !important; 
+    
+    /* Optional: Stop it from being full-screen height if you want content closer */
+    min-height: auto !important; 
+}
+
+/* 2. Resize the content box (The "Square") */
+#hero .content {
+    /* Make the square smaller */
+    max-width: 400px !important; 
+    
+    /* Ensure it sticks to the left */
+    margin-left: 0 !important; 
+    margin-right: auto !important;
+}
+
+/* 3. Fix the Profile Image Alignment */
+#hero img, 
+#hero .u-photo {
+    /* Force image to the left */
+    margin-left: 0 !important;
+    margin-right: auto !important;
+    
+    /* Optional: Make the image smaller if the square is too big */
+    width: 150px !important; 
+    height: 150px !important;
+}
+
+/* 4. Align the "Welcome" and "About" text */
+#hero h1, 
+#hero h2, 
+#hero p {
+    text-align: left !important;
+}
+
+/* MOBILE FIX: On phones, keep it centered so it doesn't look broken */
+@media (max-width: 640px) {
+    #hero {
+        align-items: center !important;
+        text-align: center !important;
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+    #hero .content {
+        max-width: 100% !important;
+    }
+    #hero img, #hero h1, #hero p {
+        margin: 0 auto !important;
+        text-align: center !important;
+    }
+}

@@ -21,6 +21,8 @@ backgroundImageWidth = 1200
 defaultFeaturedImage = "images/cybersec-banner.jpg" # Add your cybersec banner
 defaultSocialImage = "images/social-share.png" # For Twitter/LinkedIn previews
 
+customCSS = ["css/custom.css", "css/homepage.css"]
+
 # Better TOC handling
 smartTOC = true
 smartTOCHideUnfocusedChildren = true
